@@ -1,0 +1,3 @@
+role: model_bundle
+module: validators.predictive_roles
+callable: validate_role

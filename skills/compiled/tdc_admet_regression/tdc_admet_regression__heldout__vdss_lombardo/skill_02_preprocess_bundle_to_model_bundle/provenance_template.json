@@ -1,0 +1,9 @@
+{
+  "family_id": "tdc_admet_regression",
+  "split_id": "tdc_admet_regression__heldout__vdss_lombardo",
+  "skill_id": "skill_02_preprocess_bundle_to_model_bundle",
+  "task_name": "{{task_name}}",
+  "run_namespace": "support_replay",
+  "start_role": "preprocess_bundle",
+  "end_role": "model_bundle"
+}

@@ -1,0 +1,118 @@
+{
+  "Caco2_Wang": [
+    {
+      "step_id": "step_05_fit_model",
+      "role_in": "preprocess_bundle",
+      "role_out": "model_bundle",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/preprocess_bundle/preprocessor.joblib",
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/preprocess_bundle/train_matrix.npy",
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/preprocess_bundle/valid_matrix.npy",
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/preprocess_bundle/test_matrix.npy",
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/preprocess_bundle/train_labels.npy",
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/preprocess_bundle/valid_labels.npy",
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/preprocess_bundle/test_labels.npy",
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/preprocess_bundle/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/model_bundle/model.joblib",
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/model_bundle/predictions.csv",
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/model_bundle/smoke_input.npy",
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/model_bundle/manifest.json"
+      ],
+      "function": "build_model_bundle",
+      "status": "pass",
+      "wall_clock_s": 0.208309,
+      "details": {
+        "prediction_row_count": 182
+      }
+    }
+  ],
+  "Lipophilicity_AstraZeneca": [
+    {
+      "step_id": "step_05_fit_model",
+      "role_in": "preprocess_bundle",
+      "role_out": "model_bundle",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/preprocess_bundle/preprocessor.joblib",
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/preprocess_bundle/train_matrix.npy",
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/preprocess_bundle/valid_matrix.npy",
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/preprocess_bundle/test_matrix.npy",
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/preprocess_bundle/train_labels.npy",
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/preprocess_bundle/valid_labels.npy",
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/preprocess_bundle/test_labels.npy",
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/preprocess_bundle/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/model_bundle/model.joblib",
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/model_bundle/predictions.csv",
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/model_bundle/smoke_input.npy",
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/model_bundle/manifest.json"
+      ],
+      "function": "build_model_bundle",
+      "status": "pass",
+      "wall_clock_s": 0.565175,
+      "details": {
+        "prediction_row_count": 840
+      }
+    }
+  ],
+  "PPBR_AZ": [
+    {
+      "step_id": "step_05_fit_model",
+      "role_in": "preprocess_bundle",
+      "role_out": "model_bundle",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/preprocess_bundle/preprocessor.joblib",
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/preprocess_bundle/train_matrix.npy",
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/preprocess_bundle/valid_matrix.npy",
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/preprocess_bundle/test_matrix.npy",
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/preprocess_bundle/train_labels.npy",
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/preprocess_bundle/valid_labels.npy",
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/preprocess_bundle/test_labels.npy",
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/preprocess_bundle/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/model_bundle/model.joblib",
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/model_bundle/predictions.csv",
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/model_bundle/smoke_input.npy",
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/model_bundle/manifest.json"
+      ],
+      "function": "build_model_bundle",
+      "status": "pass",
+      "wall_clock_s": 0.629748,
+      "details": {
+        "prediction_row_count": 559
+      }
+    }
+  ],
+  "Half_Life_Obach": [
+    {
+      "step_id": "step_05_fit_model",
+      "role_in": "preprocess_bundle",
+      "role_out": "model_bundle",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_regression/Half_Life_Obach/artifacts/preprocess_bundle/preprocessor.joblib",
+        "runs/reference/tdc_admet_regression/Half_Life_Obach/artifacts/preprocess_bundle/train_matrix.npy",
+        "runs/reference/tdc_admet_regression/Half_Life_Obach/artifacts/preprocess_bundle/valid_matrix.npy",
+        "runs/reference/tdc_admet_regression/Half_Life_Obach/artifacts/preprocess_bundle/test_matrix.npy",
+        "runs/reference/tdc_admet_regression/Half_Life_Obach/artifacts/preprocess_bundle/train_labels.npy",
+        "runs/reference/tdc_admet_regression/Half_Life_Obach/artifacts/preprocess_bundle/valid_labels.npy",
+        "runs/reference/tdc_admet_regression/Half_Life_Obach/artifacts/preprocess_bundle/test_labels.npy",
+        "runs/reference/tdc_admet_regression/Half_Life_Obach/artifacts/preprocess_bundle/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_regression/Half_Life_Obach/artifacts/model_bundle/model.joblib",
+        "runs/reference/tdc_admet_regression/Half_Life_Obach/artifacts/model_bundle/predictions.csv",
+        "runs/reference/tdc_admet_regression/Half_Life_Obach/artifacts/model_bundle/smoke_input.npy",
+        "runs/reference/tdc_admet_regression/Half_Life_Obach/artifacts/model_bundle/manifest.json"
+      ],
+      "function": "build_model_bundle",
+      "status": "pass",
+      "wall_clock_s": 0.164459,
+      "details": {
+        "prediction_row_count": 135
+      }
+    }
+  ]
+}

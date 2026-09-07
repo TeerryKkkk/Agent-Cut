@@ -1,0 +1,354 @@
+[
+  {
+    "partition_id": "partition_001",
+    "segment_ids": [
+      "reference_query_raw__to__prepared_query",
+      "prepared_query__to__latent_or_graph",
+      "latent_or_graph__to__predicted_labels",
+      "predicted_labels__to__mapping_metrics",
+      "mapping_metrics__to__report_md"
+    ],
+    "segment_count": 5,
+    "boundary_roles": [
+      "prepared_query",
+      "latent_or_graph",
+      "predicted_labels",
+      "mapping_metrics",
+      "report_md"
+    ],
+    "role_coverage": [
+      "reference_query_raw",
+      "prepared_query",
+      "latent_or_graph",
+      "predicted_labels",
+      "mapping_metrics",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_002",
+    "segment_ids": [
+      "reference_query_raw__to__prepared_query",
+      "prepared_query__to__latent_or_graph",
+      "latent_or_graph__to__predicted_labels",
+      "predicted_labels__to__report_md"
+    ],
+    "segment_count": 4,
+    "boundary_roles": [
+      "prepared_query",
+      "latent_or_graph",
+      "predicted_labels",
+      "report_md"
+    ],
+    "role_coverage": [
+      "reference_query_raw",
+      "prepared_query",
+      "latent_or_graph",
+      "predicted_labels",
+      "mapping_metrics",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_003",
+    "segment_ids": [
+      "reference_query_raw__to__prepared_query",
+      "prepared_query__to__latent_or_graph",
+      "latent_or_graph__to__mapping_metrics",
+      "mapping_metrics__to__report_md"
+    ],
+    "segment_count": 4,
+    "boundary_roles": [
+      "prepared_query",
+      "latent_or_graph",
+      "mapping_metrics",
+      "report_md"
+    ],
+    "role_coverage": [
+      "reference_query_raw",
+      "prepared_query",
+      "latent_or_graph",
+      "predicted_labels",
+      "mapping_metrics",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_004",
+    "segment_ids": [
+      "reference_query_raw__to__prepared_query",
+      "prepared_query__to__latent_or_graph",
+      "latent_or_graph__to__report_md"
+    ],
+    "segment_count": 3,
+    "boundary_roles": [
+      "prepared_query",
+      "latent_or_graph",
+      "report_md"
+    ],
+    "role_coverage": [
+      "reference_query_raw",
+      "prepared_query",
+      "latent_or_graph",
+      "predicted_labels",
+      "mapping_metrics",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_005",
+    "segment_ids": [
+      "reference_query_raw__to__prepared_query",
+      "prepared_query__to__predicted_labels",
+      "predicted_labels__to__mapping_metrics",
+      "mapping_metrics__to__report_md"
+    ],
+    "segment_count": 4,
+    "boundary_roles": [
+      "prepared_query",
+      "predicted_labels",
+      "mapping_metrics",
+      "report_md"
+    ],
+    "role_coverage": [
+      "reference_query_raw",
+      "prepared_query",
+      "latent_or_graph",
+      "predicted_labels",
+      "mapping_metrics",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_006",
+    "segment_ids": [
+      "reference_query_raw__to__prepared_query",
+      "prepared_query__to__predicted_labels",
+      "predicted_labels__to__report_md"
+    ],
+    "segment_count": 3,
+    "boundary_roles": [
+      "prepared_query",
+      "predicted_labels",
+      "report_md"
+    ],
+    "role_coverage": [
+      "reference_query_raw",
+      "prepared_query",
+      "latent_or_graph",
+      "predicted_labels",
+      "mapping_metrics",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_007",
+    "segment_ids": [
+      "reference_query_raw__to__prepared_query",
+      "prepared_query__to__mapping_metrics",
+      "mapping_metrics__to__report_md"
+    ],
+    "segment_count": 3,
+    "boundary_roles": [
+      "prepared_query",
+      "mapping_metrics",
+      "report_md"
+    ],
+    "role_coverage": [
+      "reference_query_raw",
+      "prepared_query",
+      "latent_or_graph",
+      "predicted_labels",
+      "mapping_metrics",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_008",
+    "segment_ids": [
+      "reference_query_raw__to__prepared_query",
+      "prepared_query__to__report_md"
+    ],
+    "segment_count": 2,
+    "boundary_roles": [
+      "prepared_query",
+      "report_md"
+    ],
+    "role_coverage": [
+      "reference_query_raw",
+      "prepared_query",
+      "latent_or_graph",
+      "predicted_labels",
+      "mapping_metrics",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_009",
+    "segment_ids": [
+      "reference_query_raw__to__latent_or_graph",
+      "latent_or_graph__to__predicted_labels",
+      "predicted_labels__to__mapping_metrics",
+      "mapping_metrics__to__report_md"
+    ],
+    "segment_count": 4,
+    "boundary_roles": [
+      "latent_or_graph",
+      "predicted_labels",
+      "mapping_metrics",
+      "report_md"
+    ],
+    "role_coverage": [
+      "reference_query_raw",
+      "prepared_query",
+      "latent_or_graph",
+      "predicted_labels",
+      "mapping_metrics",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_010",
+    "segment_ids": [
+      "reference_query_raw__to__latent_or_graph",
+      "latent_or_graph__to__predicted_labels",
+      "predicted_labels__to__report_md"
+    ],
+    "segment_count": 3,
+    "boundary_roles": [
+      "latent_or_graph",
+      "predicted_labels",
+      "report_md"
+    ],
+    "role_coverage": [
+      "reference_query_raw",
+      "prepared_query",
+      "latent_or_graph",
+      "predicted_labels",
+      "mapping_metrics",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_011",
+    "segment_ids": [
+      "reference_query_raw__to__latent_or_graph",
+      "latent_or_graph__to__mapping_metrics",
+      "mapping_metrics__to__report_md"
+    ],
+    "segment_count": 3,
+    "boundary_roles": [
+      "latent_or_graph",
+      "mapping_metrics",
+      "report_md"
+    ],
+    "role_coverage": [
+      "reference_query_raw",
+      "prepared_query",
+      "latent_or_graph",
+      "predicted_labels",
+      "mapping_metrics",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_012",
+    "segment_ids": [
+      "reference_query_raw__to__latent_or_graph",
+      "latent_or_graph__to__report_md"
+    ],
+    "segment_count": 2,
+    "boundary_roles": [
+      "latent_or_graph",
+      "report_md"
+    ],
+    "role_coverage": [
+      "reference_query_raw",
+      "prepared_query",
+      "latent_or_graph",
+      "predicted_labels",
+      "mapping_metrics",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_013",
+    "segment_ids": [
+      "reference_query_raw__to__predicted_labels",
+      "predicted_labels__to__mapping_metrics",
+      "mapping_metrics__to__report_md"
+    ],
+    "segment_count": 3,
+    "boundary_roles": [
+      "predicted_labels",
+      "mapping_metrics",
+      "report_md"
+    ],
+    "role_coverage": [
+      "reference_query_raw",
+      "prepared_query",
+      "latent_or_graph",
+      "predicted_labels",
+      "mapping_metrics",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_014",
+    "segment_ids": [
+      "reference_query_raw__to__predicted_labels",
+      "predicted_labels__to__report_md"
+    ],
+    "segment_count": 2,
+    "boundary_roles": [
+      "predicted_labels",
+      "report_md"
+    ],
+    "role_coverage": [
+      "reference_query_raw",
+      "prepared_query",
+      "latent_or_graph",
+      "predicted_labels",
+      "mapping_metrics",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_015",
+    "segment_ids": [
+      "reference_query_raw__to__mapping_metrics",
+      "mapping_metrics__to__report_md"
+    ],
+    "segment_count": 2,
+    "boundary_roles": [
+      "mapping_metrics",
+      "report_md"
+    ],
+    "role_coverage": [
+      "reference_query_raw",
+      "prepared_query",
+      "latent_or_graph",
+      "predicted_labels",
+      "mapping_metrics",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_016",
+    "segment_ids": [
+      "reference_query_raw__to__report_md"
+    ],
+    "segment_count": 1,
+    "boundary_roles": [
+      "report_md"
+    ],
+    "role_coverage": [
+      "reference_query_raw",
+      "prepared_query",
+      "latent_or_graph",
+      "predicted_labels",
+      "mapping_metrics",
+      "report_md"
+    ]
+  }
+]

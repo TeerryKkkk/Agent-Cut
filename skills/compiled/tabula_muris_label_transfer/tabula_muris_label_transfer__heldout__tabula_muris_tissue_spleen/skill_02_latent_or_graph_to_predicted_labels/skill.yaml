@@ -1,0 +1,33 @@
+family_id: tabula_muris_label_transfer
+split_id: tabula_muris_label_transfer__heldout__tabula_muris_tissue_spleen
+skill_id: skill_02_latent_or_graph_to_predicted_labels
+name: skill-02-latent-or-graph-to-predicted-labels
+description: Compiled predictive skill for latent_or_graph to predicted_labels.
+selected_partition_id: partition_009
+role_start: latent_or_graph
+role_end: predicted_labels
+role_sequence:
+- latent_or_graph
+- predicted_labels
+step_specs:
+- step_id: step_04_predict_labels
+  role_in: latent_or_graph
+  role_out: predicted_labels
+  function_name: build_predicted_labels
+validator_role: predicted_labels
+support_tasks:
+- tabula_muris_tissue_limb_muscle
+- tabula_muris_tissue_lung
+- tabula_muris_tissue_marrow
+heldout_task: tabula_muris_tissue_spleen
+input_contract:
+  primary_input_role: latent_or_graph
+  artifacts_are_explicit: true
+  portable_paths_only: true
+output_contract:
+  output_role: predicted_labels
+  validator_required: true
+  scientifically_meaningful_artifact: true
+replay_entrypoint:
+  module: runtime.support_replay
+  callable: replay_skill_on_task

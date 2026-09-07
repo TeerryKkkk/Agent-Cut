@@ -1,0 +1,3 @@
+source_condition,family_scope,mean_utility,selected_minus_micro_utility,note
+artifact_partition_full,pooled,0.87268125,0.0,Selected and fine-grained partitions tie under the recorded execution.
+micro_skill,pooled,0.87268125,,Selected and fine-grained partitions tie under the recorded execution.

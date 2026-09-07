@@ -1,0 +1,37 @@
+{
+  "family_id": "tdc_admet_binary",
+  "split_id": "tdc_admet_binary__heldout__pgp_broccatelli",
+  "selected_partition_id": "partition_025",
+  "heldout_task": "Pgp_Broccatelli",
+  "support_tasks": [
+    "HIA_Hou",
+    "BBB_Martins",
+    "Bioavailability_Ma"
+  ],
+  "skills": [
+    {
+      "skill_id": "skill_01_raw_data_to_preprocess_bundle",
+      "role_start": "raw_data",
+      "role_end": "preprocess_bundle",
+      "skill_dir": "skills/compiled/tdc_admet_binary/tdc_admet_binary__heldout__pgp_broccatelli/skill_01_raw_data_to_preprocess_bundle"
+    },
+    {
+      "skill_id": "skill_02_preprocess_bundle_to_model_bundle",
+      "role_start": "preprocess_bundle",
+      "role_end": "model_bundle",
+      "skill_dir": "skills/compiled/tdc_admet_binary/tdc_admet_binary__heldout__pgp_broccatelli/skill_02_preprocess_bundle_to_model_bundle"
+    },
+    {
+      "skill_id": "skill_03_model_bundle_to_metrics_json",
+      "role_start": "model_bundle",
+      "role_end": "metrics_json",
+      "skill_dir": "skills/compiled/tdc_admet_binary/tdc_admet_binary__heldout__pgp_broccatelli/skill_03_model_bundle_to_metrics_json"
+    },
+    {
+      "skill_id": "skill_04_metrics_json_to_report_md",
+      "role_start": "metrics_json",
+      "role_end": "report_md",
+      "skill_dir": "skills/compiled/tdc_admet_binary/tdc_admet_binary__heldout__pgp_broccatelli/skill_04_metrics_json_to_report_md"
+    }
+  ]
+}

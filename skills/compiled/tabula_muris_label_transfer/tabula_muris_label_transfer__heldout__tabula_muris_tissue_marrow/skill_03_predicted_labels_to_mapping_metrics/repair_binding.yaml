@@ -1,0 +1,3 @@
+strategy: rerun_segment_from_input_role
+module: pipelines.ref_scanvi_label_transfer
+runner_class: ScanviLabelTransferReferenceRunner

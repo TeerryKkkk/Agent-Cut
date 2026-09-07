@@ -1,0 +1,25 @@
+{
+  "partition_id": "partition_009",
+  "segment_ids": [
+    "reference_query_raw__to__latent_or_graph",
+    "latent_or_graph__to__predicted_labels",
+    "predicted_labels__to__mapping_metrics",
+    "mapping_metrics__to__report_md"
+  ],
+  "segment_count": 4,
+  "boundary_roles": [
+    "latent_or_graph",
+    "predicted_labels",
+    "mapping_metrics",
+    "report_md"
+  ],
+  "role_coverage": [
+    "reference_query_raw",
+    "prepared_query",
+    "latent_or_graph",
+    "predicted_labels",
+    "mapping_metrics",
+    "report_md"
+  ],
+  "selection_rationale": "Recovered from existing legal_partitions.json under the paper-aligned selected-boundary interpretation: partition_009 keeps four reusable units while prepared_query remains internal to the first segment as a repair-only anchor."
+}

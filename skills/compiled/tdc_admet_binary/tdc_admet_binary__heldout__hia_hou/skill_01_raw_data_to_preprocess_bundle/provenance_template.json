@@ -1,0 +1,9 @@
+{
+  "family_id": "tdc_admet_binary",
+  "split_id": "tdc_admet_binary__heldout__hia_hou",
+  "skill_id": "skill_01_raw_data_to_preprocess_bundle",
+  "task_name": "{{task_name}}",
+  "run_namespace": "support_replay",
+  "start_role": "raw_data",
+  "end_role": "preprocess_bundle"
+}

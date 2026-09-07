@@ -1,0 +1,39 @@
+{
+  "family_id": "scanpy_pancreas_ingest",
+  "split_id": "scanpy_pancreas_ingest__heldout__pancreas_ref_batch_2__query_batch_1",
+  "selected_partition_id": "partition_009",
+  "heldout_task": "pancreas_ref_batch_2__query_batch_1",
+  "support_tasks": [
+    "pancreas_ref_batch_0__query_batch_1",
+    "pancreas_ref_batch_0__query_batch_2",
+    "pancreas_ref_batch_0__query_batch_3",
+    "pancreas_ref_batch_2__query_batch_0",
+    "pancreas_ref_batch_2__query_batch_3"
+  ],
+  "skills": [
+    {
+      "skill_id": "skill_01_reference_query_raw_to_latent_or_graph",
+      "role_start": "reference_query_raw",
+      "role_end": "latent_or_graph",
+      "skill_dir": "skills/compiled/scanpy_pancreas_ingest/scanpy_pancreas_ingest__heldout__pancreas_ref_batch_2__query_batch_1/skill_01_reference_query_raw_to_latent_or_graph"
+    },
+    {
+      "skill_id": "skill_02_latent_or_graph_to_predicted_labels",
+      "role_start": "latent_or_graph",
+      "role_end": "predicted_labels",
+      "skill_dir": "skills/compiled/scanpy_pancreas_ingest/scanpy_pancreas_ingest__heldout__pancreas_ref_batch_2__query_batch_1/skill_02_latent_or_graph_to_predicted_labels"
+    },
+    {
+      "skill_id": "skill_03_predicted_labels_to_mapping_metrics",
+      "role_start": "predicted_labels",
+      "role_end": "mapping_metrics",
+      "skill_dir": "skills/compiled/scanpy_pancreas_ingest/scanpy_pancreas_ingest__heldout__pancreas_ref_batch_2__query_batch_1/skill_03_predicted_labels_to_mapping_metrics"
+    },
+    {
+      "skill_id": "skill_04_mapping_metrics_to_report_md",
+      "role_start": "mapping_metrics",
+      "role_end": "report_md",
+      "skill_dir": "skills/compiled/scanpy_pancreas_ingest/scanpy_pancreas_ingest__heldout__pancreas_ref_batch_2__query_batch_1/skill_04_mapping_metrics_to_report_md"
+    }
+  ]
+}

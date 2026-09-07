@@ -1,0 +1,9 @@
+{
+  "family_id": "tdc_admet_regression",
+  "split_id": "tdc_admet_regression__heldout__ppbr_az",
+  "skill_id": "skill_03_model_bundle_to_metrics_json",
+  "task_name": "{{task_name}}",
+  "run_namespace": "support_replay",
+  "start_role": "model_bundle",
+  "end_role": "metrics_json"
+}

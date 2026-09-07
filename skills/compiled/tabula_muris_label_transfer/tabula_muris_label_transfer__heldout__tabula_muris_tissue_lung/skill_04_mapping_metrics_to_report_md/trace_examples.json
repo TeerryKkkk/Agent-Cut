@@ -1,0 +1,65 @@
+{
+  "tabula_muris_tissue_limb_muscle": [
+    {
+      "step_id": "step_06_write_report",
+      "role_in": "mapping_metrics",
+      "role_out": "report_md",
+      "input_artifacts": [
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_limb_muscle/seed_000/artifacts/mapping_metrics/metrics.json",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_limb_muscle/seed_000/artifacts/mapping_metrics/confusion/confusion_matrix.csv",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_limb_muscle/seed_000/artifacts/mapping_metrics/confusion/confusion_matrix.png"
+      ],
+      "output_artifacts": [
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_limb_muscle/seed_000/artifacts/report.md"
+      ],
+      "function": "build_report",
+      "status": "pass",
+      "wall_clock_s": 0.00081,
+      "details": {
+        "seed": 0
+      }
+    }
+  ],
+  "tabula_muris_tissue_marrow": [
+    {
+      "step_id": "step_06_write_report",
+      "role_in": "mapping_metrics",
+      "role_out": "report_md",
+      "input_artifacts": [
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_marrow/seed_000/artifacts/mapping_metrics/metrics.json",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_marrow/seed_000/artifacts/mapping_metrics/confusion/confusion_matrix.csv",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_marrow/seed_000/artifacts/mapping_metrics/confusion/confusion_matrix.png"
+      ],
+      "output_artifacts": [
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_marrow/seed_000/artifacts/report.md"
+      ],
+      "function": "build_report",
+      "status": "pass",
+      "wall_clock_s": 0.000756,
+      "details": {
+        "seed": 0
+      }
+    }
+  ],
+  "tabula_muris_tissue_spleen": [
+    {
+      "step_id": "step_06_write_report",
+      "role_in": "mapping_metrics",
+      "role_out": "report_md",
+      "input_artifacts": [
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_spleen/seed_000/artifacts/mapping_metrics/metrics.json",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_spleen/seed_000/artifacts/mapping_metrics/confusion/confusion_matrix.csv",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_spleen/seed_000/artifacts/mapping_metrics/confusion/confusion_matrix.png"
+      ],
+      "output_artifacts": [
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_spleen/seed_000/artifacts/report.md"
+      ],
+      "function": "build_report",
+      "status": "pass",
+      "wall_clock_s": 0.001484,
+      "details": {
+        "seed": 0
+      }
+    }
+  ]
+}

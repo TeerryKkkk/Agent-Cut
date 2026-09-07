@@ -1,0 +1,14 @@
+family_id: tdc_admet_regression
+split_id: tdc_admet_regression__heldout__ppbr_az
+skill_id: skill_03_model_bundle_to_metrics_json
+support_tasks:
+- Caco2_Wang
+- Lipophilicity_AstraZeneca
+- VDss_Lombardo
+- Half_Life_Obach
+expected_validator_role: metrics_json
+reference_runs:
+- runs/reference/tdc_admet_regression/Caco2_Wang
+- runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca
+- runs/reference/tdc_admet_regression/VDss_Lombardo
+- runs/reference/tdc_admet_regression/Half_Life_Obach

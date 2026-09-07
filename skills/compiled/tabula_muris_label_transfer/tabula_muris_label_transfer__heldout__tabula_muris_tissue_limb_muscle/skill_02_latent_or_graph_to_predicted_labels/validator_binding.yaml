@@ -1,0 +1,3 @@
+role: predicted_labels
+module: validators.singlecell_mapping_roles
+callable: validate_role

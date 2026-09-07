@@ -1,0 +1,33 @@
+family_id: tdc_admet_binary
+split_id: tdc_admet_binary__heldout__hia_hou
+skill_id: skill_02_preprocess_bundle_to_model_bundle
+name: skill-02-preprocess-bundle-to-model-bundle
+description: Compiled predictive skill for preprocess_bundle to model_bundle.
+selected_partition_id: partition_025
+role_start: preprocess_bundle
+role_end: model_bundle
+role_sequence:
+- preprocess_bundle
+- model_bundle
+step_specs:
+- step_id: step_05_fit_model
+  role_in: preprocess_bundle
+  role_out: model_bundle
+  function_name: build_model_bundle
+validator_role: model_bundle
+support_tasks:
+- Pgp_Broccatelli
+- BBB_Martins
+- Bioavailability_Ma
+heldout_task: HIA_Hou
+input_contract:
+  primary_input_role: preprocess_bundle
+  artifacts_are_explicit: true
+  portable_paths_only: true
+output_contract:
+  output_role: model_bundle
+  validator_required: true
+  scientifically_meaningful_artifact: true
+replay_entrypoint:
+  module: runtime.support_replay
+  callable: replay_skill_on_task

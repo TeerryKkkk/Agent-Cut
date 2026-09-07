@@ -1,0 +1,42 @@
+{
+  "adult": [
+    {
+      "step_id": "step_07_write_report",
+      "role_in": "metrics_json",
+      "role_out": "report_md",
+      "input_artifacts": [
+        "runs/reference/openml_tabular_binary/adult/artifacts/metrics.json",
+        "runs/reference/openml_tabular_binary/adult/artifacts/split_spec.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/openml_tabular_binary/adult/artifacts/report.md"
+      ],
+      "function": "build_report",
+      "status": "pass",
+      "wall_clock_s": 0.000801,
+      "details": {
+        "warning_count": 0
+      }
+    }
+  ],
+  "credit-g": [
+    {
+      "step_id": "step_07_write_report",
+      "role_in": "metrics_json",
+      "role_out": "report_md",
+      "input_artifacts": [
+        "runs/reference/openml_tabular_binary/credit-g/artifacts/metrics.json",
+        "runs/reference/openml_tabular_binary/credit-g/artifacts/split_spec.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/openml_tabular_binary/credit-g/artifacts/report.md"
+      ],
+      "function": "build_report",
+      "status": "pass",
+      "wall_clock_s": 0.000755,
+      "details": {
+        "warning_count": 0
+      }
+    }
+  ]
+}

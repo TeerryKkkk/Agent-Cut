@@ -1,0 +1,9 @@
+{
+  "family_id": "tabula_muris_label_transfer",
+  "split_id": "tabula_muris_label_transfer__heldout__tabula_muris_tissue_marrow",
+  "skill_id": "skill_04_mapping_metrics_to_report_md",
+  "task_name": "{{task_name}}",
+  "run_namespace": "support_replay",
+  "start_role": "mapping_metrics",
+  "end_role": "report_md"
+}

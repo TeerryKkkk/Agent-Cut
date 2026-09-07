@@ -1,0 +1,3 @@
+-r requirements-predictive.txt
+PyTDC>=1
+rdkit>=2023.9

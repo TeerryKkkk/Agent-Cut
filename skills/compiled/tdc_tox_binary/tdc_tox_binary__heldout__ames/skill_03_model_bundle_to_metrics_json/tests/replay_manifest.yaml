@@ -1,0 +1,10 @@
+family_id: tdc_tox_binary
+split_id: tdc_tox_binary__heldout__ames
+skill_id: skill_03_model_bundle_to_metrics_json
+support_tasks:
+- hERG
+- DILI
+expected_validator_role: metrics_json
+reference_runs:
+- runs/reference/tdc_tox_binary/hERG
+- runs/reference/tdc_tox_binary/DILI

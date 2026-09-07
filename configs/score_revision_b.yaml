@@ -1,0 +1,35 @@
+modeling:
+  ridge_lambda: 0.001
+  adjacent_interactions:
+    - B1__B2
+    - B2__B3
+    - B3__B4
+    - B4__B5
+
+selection_policy:
+  spearman_tolerance: 0.02
+  top1_regret_tolerance: 0.001
+  top3_hit_tolerance: 0.05
+  selected_utility_tolerance: 0.001
+
+v7_constraint:
+  max_clean_delta_seconds: 0.02
+  max_relative_clean_multiplier: 1.10
+
+variants:
+  V4:
+    label: phase3_baseline_objective
+    formula: score__V4
+    description: Reuse the frozen phase-3 V4 objective as the immediate baseline.
+  V6:
+    label: boundary_attribution_objective
+    formula: normalized_V4 + shared residual correction over segment_count, B1..B5, and adjacent interactions
+    description: Add interpretable shared boundary bonuses and penalties learned on non-target splits only.
+  V7:
+    label: constrained_stress_first_objective
+    formula: V6 score restricted to partitions within the explicit clean-cost bound relative to the V4-selected partition
+    description: Preserve stress-first selection while preventing another clean wall-clock regression.
+  V8:
+    label: family_conditioned_boundary_objective
+    formula: normalized_V4 + family-conditioned residual correction over the same shared interpretable term set
+    description: Keep the structure shared while allowing family-specific coefficients.

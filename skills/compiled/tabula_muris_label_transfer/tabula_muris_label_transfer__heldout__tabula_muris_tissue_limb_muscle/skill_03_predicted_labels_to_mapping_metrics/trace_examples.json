@@ -1,0 +1,71 @@
+{
+  "tabula_muris_tissue_lung": [
+    {
+      "step_id": "step_05_compute_mapping_metrics",
+      "role_in": "predicted_labels",
+      "role_out": "mapping_metrics",
+      "input_artifacts": [
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_lung/seed_000/artifacts/predicted_labels/predictions.csv",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_lung/seed_000/artifacts/predicted_labels/summary.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_lung/seed_000/artifacts/mapping_metrics/metrics.json",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_lung/seed_000/artifacts/mapping_metrics/confusion/confusion_matrix.csv",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_lung/seed_000/artifacts/mapping_metrics/confusion/confusion_matrix.png"
+      ],
+      "function": "build_mapping_metrics",
+      "status": "pass",
+      "wall_clock_s": 0.391045,
+      "details": {
+        "accuracy": 0.7584424534803583,
+        "macro_f1": 0.4743806505252862
+      }
+    }
+  ],
+  "tabula_muris_tissue_marrow": [
+    {
+      "step_id": "step_05_compute_mapping_metrics",
+      "role_in": "predicted_labels",
+      "role_out": "mapping_metrics",
+      "input_artifacts": [
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_marrow/seed_000/artifacts/predicted_labels/predictions.csv",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_marrow/seed_000/artifacts/predicted_labels/summary.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_marrow/seed_000/artifacts/mapping_metrics/metrics.json",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_marrow/seed_000/artifacts/mapping_metrics/confusion/confusion_matrix.csv",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_marrow/seed_000/artifacts/mapping_metrics/confusion/confusion_matrix.png"
+      ],
+      "function": "build_mapping_metrics",
+      "status": "pass",
+      "wall_clock_s": 0.338751,
+      "details": {
+        "accuracy": 0.3420175963099001,
+        "macro_f1": 0.0733538339230354
+      }
+    }
+  ],
+  "tabula_muris_tissue_spleen": [
+    {
+      "step_id": "step_05_compute_mapping_metrics",
+      "role_in": "predicted_labels",
+      "role_out": "mapping_metrics",
+      "input_artifacts": [
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_spleen/seed_000/artifacts/predicted_labels/predictions.csv",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_spleen/seed_000/artifacts/predicted_labels/summary.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_spleen/seed_000/artifacts/mapping_metrics/metrics.json",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_spleen/seed_000/artifacts/mapping_metrics/confusion/confusion_matrix.csv",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_spleen/seed_000/artifacts/mapping_metrics/confusion/confusion_matrix.png"
+      ],
+      "function": "build_mapping_metrics",
+      "status": "pass",
+      "wall_clock_s": 0.522528,
+      "details": {
+        "accuracy": 0.7004895675486653,
+        "macro_f1": 0.13171023178163416
+      }
+    }
+  ]
+}

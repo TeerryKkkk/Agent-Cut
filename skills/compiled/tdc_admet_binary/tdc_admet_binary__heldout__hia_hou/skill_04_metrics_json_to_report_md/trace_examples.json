@@ -1,0 +1,62 @@
+{
+  "Pgp_Broccatelli": [
+    {
+      "step_id": "step_07_write_report",
+      "role_in": "metrics_json",
+      "role_out": "report_md",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/metrics.json",
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/split_spec.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/report.md"
+      ],
+      "function": "build_report",
+      "status": "pass",
+      "wall_clock_s": 0.000705,
+      "details": {
+        "warning_count": 0
+      }
+    }
+  ],
+  "BBB_Martins": [
+    {
+      "step_id": "step_07_write_report",
+      "role_in": "metrics_json",
+      "role_out": "report_md",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_binary/BBB_Martins/artifacts/metrics.json",
+        "runs/reference/tdc_admet_binary/BBB_Martins/artifacts/split_spec.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_binary/BBB_Martins/artifacts/report.md"
+      ],
+      "function": "build_report",
+      "status": "pass",
+      "wall_clock_s": 0.000602,
+      "details": {
+        "warning_count": 0
+      }
+    }
+  ],
+  "Bioavailability_Ma": [
+    {
+      "step_id": "step_07_write_report",
+      "role_in": "metrics_json",
+      "role_out": "report_md",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_binary/Bioavailability_Ma/artifacts/metrics.json",
+        "runs/reference/tdc_admet_binary/Bioavailability_Ma/artifacts/split_spec.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_binary/Bioavailability_Ma/artifacts/report.md"
+      ],
+      "function": "build_report",
+      "status": "pass",
+      "wall_clock_s": 0.001445,
+      "details": {
+        "warning_count": 0
+      }
+    }
+  ]
+}

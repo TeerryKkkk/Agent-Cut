@@ -1,0 +1,38 @@
+{
+  "family_id": "tdc_admet_regression",
+  "split_id": "tdc_admet_regression__heldout__ppbr_az",
+  "selected_partition_id": "partition_025",
+  "heldout_task": "PPBR_AZ",
+  "support_tasks": [
+    "Caco2_Wang",
+    "Lipophilicity_AstraZeneca",
+    "VDss_Lombardo",
+    "Half_Life_Obach"
+  ],
+  "skills": [
+    {
+      "skill_id": "skill_01_raw_data_to_preprocess_bundle",
+      "role_start": "raw_data",
+      "role_end": "preprocess_bundle",
+      "skill_dir": "skills/compiled/tdc_admet_regression/tdc_admet_regression__heldout__ppbr_az/skill_01_raw_data_to_preprocess_bundle"
+    },
+    {
+      "skill_id": "skill_02_preprocess_bundle_to_model_bundle",
+      "role_start": "preprocess_bundle",
+      "role_end": "model_bundle",
+      "skill_dir": "skills/compiled/tdc_admet_regression/tdc_admet_regression__heldout__ppbr_az/skill_02_preprocess_bundle_to_model_bundle"
+    },
+    {
+      "skill_id": "skill_03_model_bundle_to_metrics_json",
+      "role_start": "model_bundle",
+      "role_end": "metrics_json",
+      "skill_dir": "skills/compiled/tdc_admet_regression/tdc_admet_regression__heldout__ppbr_az/skill_03_model_bundle_to_metrics_json"
+    },
+    {
+      "skill_id": "skill_04_metrics_json_to_report_md",
+      "role_start": "metrics_json",
+      "role_end": "report_md",
+      "skill_dir": "skills/compiled/tdc_admet_regression/tdc_admet_regression__heldout__ppbr_az/skill_04_metrics_json_to_report_md"
+    }
+  ]
+}

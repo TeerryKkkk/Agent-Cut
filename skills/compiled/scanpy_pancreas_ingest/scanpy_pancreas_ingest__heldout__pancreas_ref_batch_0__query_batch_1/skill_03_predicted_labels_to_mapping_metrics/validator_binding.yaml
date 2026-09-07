@@ -1,0 +1,3 @@
+role: mapping_metrics
+module: validators.singlecell_mapping_roles
+callable: validate_role

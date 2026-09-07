@@ -1,0 +1,136 @@
+{
+  "hERG": [
+    {
+      "step_id": "step_02_profile_dataset",
+      "role_in": "raw_data",
+      "role_out": "profile_json",
+      "input_artifacts": [
+        "runs/reference/tdc_tox_binary/hERG/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/tdc_tox_binary/hERG/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_tox_binary/hERG/artifacts/profile.json"
+      ],
+      "function": "build_profile",
+      "status": "pass",
+      "wall_clock_s": 0.005373,
+      "details": {
+        "valid_smiles_count": 655
+      }
+    },
+    {
+      "step_id": "step_03_define_split",
+      "role_in": "profile_json",
+      "role_out": "split_spec_json",
+      "input_artifacts": [
+        "runs/reference/tdc_tox_binary/hERG/artifacts/profile.json",
+        "runs/reference/tdc_tox_binary/hERG/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/tdc_tox_binary/hERG/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_tox_binary/hERG/artifacts/split_spec.json"
+      ],
+      "function": "build_split_spec",
+      "status": "pass",
+      "wall_clock_s": 0.002228,
+      "details": {
+        "train_size": 457,
+        "valid_size": 66,
+        "test_size": 132
+      }
+    },
+    {
+      "step_id": "step_04_fit_preprocess",
+      "role_in": "split_spec_json",
+      "role_out": "preprocess_bundle",
+      "input_artifacts": [
+        "runs/reference/tdc_tox_binary/hERG/artifacts/split_spec.json",
+        "runs/reference/tdc_tox_binary/hERG/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/tdc_tox_binary/hERG/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_tox_binary/hERG/artifacts/preprocess_bundle/preprocessor.joblib",
+        "runs/reference/tdc_tox_binary/hERG/artifacts/preprocess_bundle/train_matrix.npy",
+        "runs/reference/tdc_tox_binary/hERG/artifacts/preprocess_bundle/valid_matrix.npy",
+        "runs/reference/tdc_tox_binary/hERG/artifacts/preprocess_bundle/test_matrix.npy",
+        "runs/reference/tdc_tox_binary/hERG/artifacts/preprocess_bundle/train_labels.npy",
+        "runs/reference/tdc_tox_binary/hERG/artifacts/preprocess_bundle/valid_labels.npy",
+        "runs/reference/tdc_tox_binary/hERG/artifacts/preprocess_bundle/test_labels.npy",
+        "runs/reference/tdc_tox_binary/hERG/artifacts/preprocess_bundle/manifest.json"
+      ],
+      "function": "build_preprocess_bundle",
+      "status": "pass",
+      "wall_clock_s": 0.055068,
+      "details": {
+        "transformed_feature_count": 2048
+      }
+    }
+  ],
+  "AMES": [
+    {
+      "step_id": "step_02_profile_dataset",
+      "role_in": "raw_data",
+      "role_out": "profile_json",
+      "input_artifacts": [
+        "runs/reference/tdc_tox_binary/AMES/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/tdc_tox_binary/AMES/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_tox_binary/AMES/artifacts/profile.json"
+      ],
+      "function": "build_profile",
+      "status": "pass",
+      "wall_clock_s": 0.010973,
+      "details": {
+        "valid_smiles_count": 7278
+      }
+    },
+    {
+      "step_id": "step_03_define_split",
+      "role_in": "profile_json",
+      "role_out": "split_spec_json",
+      "input_artifacts": [
+        "runs/reference/tdc_tox_binary/AMES/artifacts/profile.json",
+        "runs/reference/tdc_tox_binary/AMES/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/tdc_tox_binary/AMES/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_tox_binary/AMES/artifacts/split_spec.json"
+      ],
+      "function": "build_split_spec",
+      "status": "pass",
+      "wall_clock_s": 0.007072,
+      "details": {
+        "train_size": 5093,
+        "valid_size": 728,
+        "test_size": 1457
+      }
+    },
+    {
+      "step_id": "step_04_fit_preprocess",
+      "role_in": "split_spec_json",
+      "role_out": "preprocess_bundle",
+      "input_artifacts": [
+        "runs/reference/tdc_tox_binary/AMES/artifacts/split_spec.json",
+        "runs/reference/tdc_tox_binary/AMES/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/tdc_tox_binary/AMES/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_tox_binary/AMES/artifacts/preprocess_bundle/preprocessor.joblib",
+        "runs/reference/tdc_tox_binary/AMES/artifacts/preprocess_bundle/train_matrix.npy",
+        "runs/reference/tdc_tox_binary/AMES/artifacts/preprocess_bundle/valid_matrix.npy",
+        "runs/reference/tdc_tox_binary/AMES/artifacts/preprocess_bundle/test_matrix.npy",
+        "runs/reference/tdc_tox_binary/AMES/artifacts/preprocess_bundle/train_labels.npy",
+        "runs/reference/tdc_tox_binary/AMES/artifacts/preprocess_bundle/valid_labels.npy",
+        "runs/reference/tdc_tox_binary/AMES/artifacts/preprocess_bundle/test_labels.npy",
+        "runs/reference/tdc_tox_binary/AMES/artifacts/preprocess_bundle/manifest.json"
+      ],
+      "function": "build_preprocess_bundle",
+      "status": "pass",
+      "wall_clock_s": 0.320786,
+      "details": {
+        "transformed_feature_count": 2048
+      }
+    }
+  ]
+}

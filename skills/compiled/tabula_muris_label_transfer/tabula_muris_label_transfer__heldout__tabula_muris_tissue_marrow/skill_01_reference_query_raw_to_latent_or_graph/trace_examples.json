@@ -1,0 +1,185 @@
+{
+  "tabula_muris_tissue_limb_muscle": [
+    {
+      "step_id": "step_02_prepare_query",
+      "role_in": "reference_query_raw",
+      "role_out": "prepared_query",
+      "input_artifacts": [
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_limb_muscle/seed_000/artifacts/reference_query_raw/reference_raw.h5ad",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_limb_muscle/seed_000/artifacts/reference_query_raw/query_raw.h5ad",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_limb_muscle/seed_000/artifacts/reference_query_raw/task_manifest.json",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_limb_muscle/seed_000/artifacts/reference_query_raw/metadata.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_limb_muscle/seed_000/artifacts/prepared_query/reference_prepared.h5ad",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_limb_muscle/seed_000/artifacts/prepared_query/query_prepared.h5ad",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_limb_muscle/seed_000/artifacts/prepared_query/combined_prepared.h5ad",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_limb_muscle/seed_000/artifacts/prepared_query/summary.json"
+      ],
+      "function": "build_prepared_query",
+      "status": "pass",
+      "wall_clock_s": 5.049054,
+      "details": {
+        "family_id": "tabula_muris_label_transfer",
+        "task_name": "tabula_muris_tissue_limb_muscle",
+        "gene_count": 2000,
+        "reference_n_cells": 1620,
+        "query_n_cells": 8403,
+        "combined_n_cells": 10023,
+        "counts_layer_present": true
+      }
+    },
+    {
+      "step_id": "step_03_build_latent_or_graph",
+      "role_in": "prepared_query",
+      "role_out": "latent_or_graph",
+      "input_artifacts": [
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_limb_muscle/seed_000/artifacts/prepared_query/reference_prepared.h5ad",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_limb_muscle/seed_000/artifacts/prepared_query/query_prepared.h5ad",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_limb_muscle/seed_000/artifacts/prepared_query/combined_prepared.h5ad",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_limb_muscle/seed_000/artifacts/prepared_query/summary.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_limb_muscle/seed_000/artifacts/latent_or_graph/combined_latent.h5ad",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_limb_muscle/seed_000/artifacts/latent_or_graph/scvi_model",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_limb_muscle/seed_000/artifacts/latent_or_graph/scanvi_model",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_limb_muscle/seed_000/artifacts/latent_or_graph/summary.json"
+      ],
+      "function": "build_latent_or_graph",
+      "status": "pass",
+      "wall_clock_s": 41.087825,
+      "details": {
+        "family_id": "tabula_muris_label_transfer",
+        "task_name": "tabula_muris_tissue_limb_muscle",
+        "seed": 0,
+        "accelerator": "cpu",
+        "devices": 1,
+        "latent_key_scvi": "X_scVI",
+        "latent_key_scanvi": "X_scANVI",
+        "prediction_count": 10023
+      }
+    }
+  ],
+  "tabula_muris_tissue_lung": [
+    {
+      "step_id": "step_02_prepare_query",
+      "role_in": "reference_query_raw",
+      "role_out": "prepared_query",
+      "input_artifacts": [
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_lung/seed_000/artifacts/reference_query_raw/reference_raw.h5ad",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_lung/seed_000/artifacts/reference_query_raw/query_raw.h5ad",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_lung/seed_000/artifacts/reference_query_raw/task_manifest.json",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_lung/seed_000/artifacts/reference_query_raw/metadata.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_lung/seed_000/artifacts/prepared_query/reference_prepared.h5ad",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_lung/seed_000/artifacts/prepared_query/query_prepared.h5ad",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_lung/seed_000/artifacts/prepared_query/combined_prepared.h5ad",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_lung/seed_000/artifacts/prepared_query/summary.json"
+      ],
+      "function": "build_prepared_query",
+      "status": "pass",
+      "wall_clock_s": 3.142457,
+      "details": {
+        "family_id": "tabula_muris_label_transfer",
+        "task_name": "tabula_muris_tissue_lung",
+        "gene_count": 2000,
+        "reference_n_cells": 1698,
+        "query_n_cells": 5804,
+        "combined_n_cells": 7502,
+        "counts_layer_present": true
+      }
+    },
+    {
+      "step_id": "step_03_build_latent_or_graph",
+      "role_in": "prepared_query",
+      "role_out": "latent_or_graph",
+      "input_artifacts": [
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_lung/seed_000/artifacts/prepared_query/reference_prepared.h5ad",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_lung/seed_000/artifacts/prepared_query/query_prepared.h5ad",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_lung/seed_000/artifacts/prepared_query/combined_prepared.h5ad",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_lung/seed_000/artifacts/prepared_query/summary.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_lung/seed_000/artifacts/latent_or_graph/combined_latent.h5ad",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_lung/seed_000/artifacts/latent_or_graph/scvi_model",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_lung/seed_000/artifacts/latent_or_graph/scanvi_model",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_lung/seed_000/artifacts/latent_or_graph/summary.json"
+      ],
+      "function": "build_latent_or_graph",
+      "status": "pass",
+      "wall_clock_s": 45.354472,
+      "details": {
+        "family_id": "tabula_muris_label_transfer",
+        "task_name": "tabula_muris_tissue_lung",
+        "seed": 0,
+        "accelerator": "cpu",
+        "devices": 1,
+        "latent_key_scvi": "X_scVI",
+        "latent_key_scanvi": "X_scANVI",
+        "prediction_count": 7502
+      }
+    }
+  ],
+  "tabula_muris_tissue_spleen": [
+    {
+      "step_id": "step_02_prepare_query",
+      "role_in": "reference_query_raw",
+      "role_out": "prepared_query",
+      "input_artifacts": [
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_spleen/seed_000/artifacts/reference_query_raw/reference_raw.h5ad",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_spleen/seed_000/artifacts/reference_query_raw/query_raw.h5ad",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_spleen/seed_000/artifacts/reference_query_raw/task_manifest.json",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_spleen/seed_000/artifacts/reference_query_raw/metadata.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_spleen/seed_000/artifacts/prepared_query/reference_prepared.h5ad",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_spleen/seed_000/artifacts/prepared_query/query_prepared.h5ad",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_spleen/seed_000/artifacts/prepared_query/combined_prepared.h5ad",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_spleen/seed_000/artifacts/prepared_query/summary.json"
+      ],
+      "function": "build_prepared_query",
+      "status": "pass",
+      "wall_clock_s": 2.843231,
+      "details": {
+        "family_id": "tabula_muris_label_transfer",
+        "task_name": "tabula_muris_tissue_spleen",
+        "gene_count": 2000,
+        "reference_n_cells": 972,
+        "query_n_cells": 17158,
+        "combined_n_cells": 18130,
+        "counts_layer_present": true
+      }
+    },
+    {
+      "step_id": "step_03_build_latent_or_graph",
+      "role_in": "prepared_query",
+      "role_out": "latent_or_graph",
+      "input_artifacts": [
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_spleen/seed_000/artifacts/prepared_query/reference_prepared.h5ad",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_spleen/seed_000/artifacts/prepared_query/query_prepared.h5ad",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_spleen/seed_000/artifacts/prepared_query/combined_prepared.h5ad",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_spleen/seed_000/artifacts/prepared_query/summary.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_spleen/seed_000/artifacts/latent_or_graph/combined_latent.h5ad",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_spleen/seed_000/artifacts/latent_or_graph/scvi_model",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_spleen/seed_000/artifacts/latent_or_graph/scanvi_model",
+        "runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_spleen/seed_000/artifacts/latent_or_graph/summary.json"
+      ],
+      "function": "build_latent_or_graph",
+      "status": "pass",
+      "wall_clock_s": 99.448344,
+      "details": {
+        "family_id": "tabula_muris_label_transfer",
+        "task_name": "tabula_muris_tissue_spleen",
+        "seed": 0,
+        "accelerator": "cpu",
+        "devices": 1,
+        "latent_key_scvi": "X_scVI",
+        "latent_key_scanvi": "X_scANVI",
+        "prediction_count": 18130
+      }
+    }
+  ]
+}

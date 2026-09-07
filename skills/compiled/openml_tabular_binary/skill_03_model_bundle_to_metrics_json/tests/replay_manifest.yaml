@@ -1,0 +1,8 @@
+skill_id: skill_03_model_bundle_to_metrics_json
+support_tasks:
+- adult
+- credit-g
+expected_validator_role: metrics_json
+reference_runs:
+- runs/reference/openml_tabular_binary/adult
+- runs/reference/openml_tabular_binary/credit-g

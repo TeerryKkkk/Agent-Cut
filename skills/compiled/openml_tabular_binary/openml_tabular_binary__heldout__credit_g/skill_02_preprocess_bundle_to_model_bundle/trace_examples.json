@@ -1,0 +1,56 @@
+{
+  "adult": [
+    {
+      "step_id": "step_05_fit_model",
+      "role_in": "preprocess_bundle",
+      "role_out": "model_bundle",
+      "input_artifacts": [
+        "runs/reference/openml_tabular_binary/adult/artifacts/preprocess_bundle/preprocessor.joblib",
+        "runs/reference/openml_tabular_binary/adult/artifacts/preprocess_bundle/train_matrix.npy",
+        "runs/reference/openml_tabular_binary/adult/artifacts/preprocess_bundle/test_matrix.npy",
+        "runs/reference/openml_tabular_binary/adult/artifacts/preprocess_bundle/train_labels.npy",
+        "runs/reference/openml_tabular_binary/adult/artifacts/preprocess_bundle/test_labels.npy",
+        "runs/reference/openml_tabular_binary/adult/artifacts/preprocess_bundle/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/openml_tabular_binary/adult/artifacts/model_bundle/model.joblib",
+        "runs/reference/openml_tabular_binary/adult/artifacts/model_bundle/predictions.csv",
+        "runs/reference/openml_tabular_binary/adult/artifacts/model_bundle/smoke_input.npy",
+        "runs/reference/openml_tabular_binary/adult/artifacts/model_bundle/manifest.json"
+      ],
+      "function": "build_model_bundle",
+      "status": "pass",
+      "wall_clock_s": 0.160045,
+      "details": {
+        "prediction_row_count": 4885
+      }
+    }
+  ],
+  "bank-marketing": [
+    {
+      "step_id": "step_05_fit_model",
+      "role_in": "preprocess_bundle",
+      "role_out": "model_bundle",
+      "input_artifacts": [
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/preprocess_bundle/preprocessor.joblib",
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/preprocess_bundle/train_matrix.npy",
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/preprocess_bundle/test_matrix.npy",
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/preprocess_bundle/train_labels.npy",
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/preprocess_bundle/test_labels.npy",
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/preprocess_bundle/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/model_bundle/model.joblib",
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/model_bundle/predictions.csv",
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/model_bundle/smoke_input.npy",
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/model_bundle/manifest.json"
+      ],
+      "function": "build_model_bundle",
+      "status": "pass",
+      "wall_clock_s": 0.098394,
+      "details": {
+        "prediction_row_count": 4522
+      }
+    }
+  ]
+}

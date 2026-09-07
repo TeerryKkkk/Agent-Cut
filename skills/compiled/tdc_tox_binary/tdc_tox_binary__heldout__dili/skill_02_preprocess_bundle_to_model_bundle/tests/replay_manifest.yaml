@@ -1,0 +1,10 @@
+family_id: tdc_tox_binary
+split_id: tdc_tox_binary__heldout__dili
+skill_id: skill_02_preprocess_bundle_to_model_bundle
+support_tasks:
+- hERG
+- AMES
+expected_validator_role: model_bundle
+reference_runs:
+- runs/reference/tdc_tox_binary/hERG
+- runs/reference/tdc_tox_binary/AMES

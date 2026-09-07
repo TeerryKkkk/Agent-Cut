@@ -1,0 +1,770 @@
+[
+  {
+    "partition_id": "partition_001",
+    "segment_ids": [
+      "raw_data__to__profile_json",
+      "profile_json__to__split_spec_json",
+      "split_spec_json__to__preprocess_bundle",
+      "preprocess_bundle__to__model_bundle",
+      "model_bundle__to__metrics_json",
+      "metrics_json__to__report_md"
+    ],
+    "segment_count": 6,
+    "boundary_roles": [
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_002",
+    "segment_ids": [
+      "raw_data__to__profile_json",
+      "profile_json__to__split_spec_json",
+      "split_spec_json__to__preprocess_bundle",
+      "preprocess_bundle__to__model_bundle",
+      "model_bundle__to__report_md"
+    ],
+    "segment_count": 5,
+    "boundary_roles": [
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_003",
+    "segment_ids": [
+      "raw_data__to__profile_json",
+      "profile_json__to__split_spec_json",
+      "split_spec_json__to__preprocess_bundle",
+      "preprocess_bundle__to__metrics_json",
+      "metrics_json__to__report_md"
+    ],
+    "segment_count": 5,
+    "boundary_roles": [
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "metrics_json",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_004",
+    "segment_ids": [
+      "raw_data__to__profile_json",
+      "profile_json__to__split_spec_json",
+      "split_spec_json__to__preprocess_bundle",
+      "preprocess_bundle__to__report_md"
+    ],
+    "segment_count": 4,
+    "boundary_roles": [
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_005",
+    "segment_ids": [
+      "raw_data__to__profile_json",
+      "profile_json__to__split_spec_json",
+      "split_spec_json__to__model_bundle",
+      "model_bundle__to__metrics_json",
+      "metrics_json__to__report_md"
+    ],
+    "segment_count": 5,
+    "boundary_roles": [
+      "profile_json",
+      "split_spec_json",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_006",
+    "segment_ids": [
+      "raw_data__to__profile_json",
+      "profile_json__to__split_spec_json",
+      "split_spec_json__to__model_bundle",
+      "model_bundle__to__report_md"
+    ],
+    "segment_count": 4,
+    "boundary_roles": [
+      "profile_json",
+      "split_spec_json",
+      "model_bundle",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_007",
+    "segment_ids": [
+      "raw_data__to__profile_json",
+      "profile_json__to__split_spec_json",
+      "split_spec_json__to__metrics_json",
+      "metrics_json__to__report_md"
+    ],
+    "segment_count": 4,
+    "boundary_roles": [
+      "profile_json",
+      "split_spec_json",
+      "metrics_json",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_008",
+    "segment_ids": [
+      "raw_data__to__profile_json",
+      "profile_json__to__split_spec_json",
+      "split_spec_json__to__report_md"
+    ],
+    "segment_count": 3,
+    "boundary_roles": [
+      "profile_json",
+      "split_spec_json",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_009",
+    "segment_ids": [
+      "raw_data__to__profile_json",
+      "profile_json__to__preprocess_bundle",
+      "preprocess_bundle__to__model_bundle",
+      "model_bundle__to__metrics_json",
+      "metrics_json__to__report_md"
+    ],
+    "segment_count": 5,
+    "boundary_roles": [
+      "profile_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_010",
+    "segment_ids": [
+      "raw_data__to__profile_json",
+      "profile_json__to__preprocess_bundle",
+      "preprocess_bundle__to__model_bundle",
+      "model_bundle__to__report_md"
+    ],
+    "segment_count": 4,
+    "boundary_roles": [
+      "profile_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_011",
+    "segment_ids": [
+      "raw_data__to__profile_json",
+      "profile_json__to__preprocess_bundle",
+      "preprocess_bundle__to__metrics_json",
+      "metrics_json__to__report_md"
+    ],
+    "segment_count": 4,
+    "boundary_roles": [
+      "profile_json",
+      "preprocess_bundle",
+      "metrics_json",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_012",
+    "segment_ids": [
+      "raw_data__to__profile_json",
+      "profile_json__to__preprocess_bundle",
+      "preprocess_bundle__to__report_md"
+    ],
+    "segment_count": 3,
+    "boundary_roles": [
+      "profile_json",
+      "preprocess_bundle",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_013",
+    "segment_ids": [
+      "raw_data__to__profile_json",
+      "profile_json__to__model_bundle",
+      "model_bundle__to__metrics_json",
+      "metrics_json__to__report_md"
+    ],
+    "segment_count": 4,
+    "boundary_roles": [
+      "profile_json",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_014",
+    "segment_ids": [
+      "raw_data__to__profile_json",
+      "profile_json__to__model_bundle",
+      "model_bundle__to__report_md"
+    ],
+    "segment_count": 3,
+    "boundary_roles": [
+      "profile_json",
+      "model_bundle",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_015",
+    "segment_ids": [
+      "raw_data__to__profile_json",
+      "profile_json__to__metrics_json",
+      "metrics_json__to__report_md"
+    ],
+    "segment_count": 3,
+    "boundary_roles": [
+      "profile_json",
+      "metrics_json",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_016",
+    "segment_ids": [
+      "raw_data__to__profile_json",
+      "profile_json__to__report_md"
+    ],
+    "segment_count": 2,
+    "boundary_roles": [
+      "profile_json",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_017",
+    "segment_ids": [
+      "raw_data__to__split_spec_json",
+      "split_spec_json__to__preprocess_bundle",
+      "preprocess_bundle__to__model_bundle",
+      "model_bundle__to__metrics_json",
+      "metrics_json__to__report_md"
+    ],
+    "segment_count": 5,
+    "boundary_roles": [
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_018",
+    "segment_ids": [
+      "raw_data__to__split_spec_json",
+      "split_spec_json__to__preprocess_bundle",
+      "preprocess_bundle__to__model_bundle",
+      "model_bundle__to__report_md"
+    ],
+    "segment_count": 4,
+    "boundary_roles": [
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_019",
+    "segment_ids": [
+      "raw_data__to__split_spec_json",
+      "split_spec_json__to__preprocess_bundle",
+      "preprocess_bundle__to__metrics_json",
+      "metrics_json__to__report_md"
+    ],
+    "segment_count": 4,
+    "boundary_roles": [
+      "split_spec_json",
+      "preprocess_bundle",
+      "metrics_json",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_020",
+    "segment_ids": [
+      "raw_data__to__split_spec_json",
+      "split_spec_json__to__preprocess_bundle",
+      "preprocess_bundle__to__report_md"
+    ],
+    "segment_count": 3,
+    "boundary_roles": [
+      "split_spec_json",
+      "preprocess_bundle",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_021",
+    "segment_ids": [
+      "raw_data__to__split_spec_json",
+      "split_spec_json__to__model_bundle",
+      "model_bundle__to__metrics_json",
+      "metrics_json__to__report_md"
+    ],
+    "segment_count": 4,
+    "boundary_roles": [
+      "split_spec_json",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_022",
+    "segment_ids": [
+      "raw_data__to__split_spec_json",
+      "split_spec_json__to__model_bundle",
+      "model_bundle__to__report_md"
+    ],
+    "segment_count": 3,
+    "boundary_roles": [
+      "split_spec_json",
+      "model_bundle",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_023",
+    "segment_ids": [
+      "raw_data__to__split_spec_json",
+      "split_spec_json__to__metrics_json",
+      "metrics_json__to__report_md"
+    ],
+    "segment_count": 3,
+    "boundary_roles": [
+      "split_spec_json",
+      "metrics_json",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_024",
+    "segment_ids": [
+      "raw_data__to__split_spec_json",
+      "split_spec_json__to__report_md"
+    ],
+    "segment_count": 2,
+    "boundary_roles": [
+      "split_spec_json",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_025",
+    "segment_ids": [
+      "raw_data__to__preprocess_bundle",
+      "preprocess_bundle__to__model_bundle",
+      "model_bundle__to__metrics_json",
+      "metrics_json__to__report_md"
+    ],
+    "segment_count": 4,
+    "boundary_roles": [
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_026",
+    "segment_ids": [
+      "raw_data__to__preprocess_bundle",
+      "preprocess_bundle__to__model_bundle",
+      "model_bundle__to__report_md"
+    ],
+    "segment_count": 3,
+    "boundary_roles": [
+      "preprocess_bundle",
+      "model_bundle",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_027",
+    "segment_ids": [
+      "raw_data__to__preprocess_bundle",
+      "preprocess_bundle__to__metrics_json",
+      "metrics_json__to__report_md"
+    ],
+    "segment_count": 3,
+    "boundary_roles": [
+      "preprocess_bundle",
+      "metrics_json",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_028",
+    "segment_ids": [
+      "raw_data__to__preprocess_bundle",
+      "preprocess_bundle__to__report_md"
+    ],
+    "segment_count": 2,
+    "boundary_roles": [
+      "preprocess_bundle",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_029",
+    "segment_ids": [
+      "raw_data__to__model_bundle",
+      "model_bundle__to__metrics_json",
+      "metrics_json__to__report_md"
+    ],
+    "segment_count": 3,
+    "boundary_roles": [
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_030",
+    "segment_ids": [
+      "raw_data__to__model_bundle",
+      "model_bundle__to__report_md"
+    ],
+    "segment_count": 2,
+    "boundary_roles": [
+      "model_bundle",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_031",
+    "segment_ids": [
+      "raw_data__to__metrics_json",
+      "metrics_json__to__report_md"
+    ],
+    "segment_count": 2,
+    "boundary_roles": [
+      "metrics_json",
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  },
+  {
+    "partition_id": "partition_032",
+    "segment_ids": [
+      "raw_data__to__report_md"
+    ],
+    "segment_count": 1,
+    "boundary_roles": [
+      "report_md"
+    ],
+    "role_coverage": [
+      "raw_data",
+      "profile_json",
+      "split_spec_json",
+      "preprocess_bundle",
+      "model_bundle",
+      "metrics_json",
+      "report_md"
+    ]
+  }
+]

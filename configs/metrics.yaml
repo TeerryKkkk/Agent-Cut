@@ -1,0 +1,161 @@
+families:
+  openml_tabular_binary:
+    primary_metric: balanced_accuracy
+    secondary_metrics:
+      - accuracy
+      - macro_f1
+      - roc_auc
+      - average_precision
+    dataset_metric_overrides: {}
+    success_threshold_rule:
+      type: relative_to_reference
+      description: >
+        A downstream run is successful when validator gates pass and balanced accuracy
+        is no worse than 0.02 absolute below the deterministic reference pipeline on
+        the same task.
+      max_primary_metric_drop: 0.02
+    recomputation:
+      enabled: true
+      metric_tolerance: 1.0e-6
+      require_probability_metrics_when_available: true
+      prediction_type: binary_classification
+
+  tdc_admet_binary:
+    primary_metric: roc_auc
+    secondary_metrics:
+      - average_precision
+      - balanced_accuracy
+      - accuracy
+      - macro_f1
+    dataset_metric_overrides:
+      HIA_Hou: roc-auc
+      Pgp_Broccatelli: roc-auc
+      BBB_Martins: roc-auc
+      Bioavailability_Ma: roc-auc
+    success_threshold_rule:
+      type: relative_to_reference
+      description: >
+        A downstream run is successful when validator gates pass and AUROC is no worse
+        than 0.03 absolute below the deterministic TDC reference pipeline on the same
+        dataset.
+      max_primary_metric_drop: 0.03
+    recomputation:
+      enabled: true
+      metric_tolerance: 1.0e-6
+      require_probability_metrics_when_available: true
+      prediction_type: binary_classification
+
+  tdc_admet_regression:
+    primary_metric: mae
+    secondary_metrics:
+      - rmse
+      - r2
+      - spearman
+    dataset_metric_overrides:
+      Caco2_Wang: mae
+      Lipophilicity_AstraZeneca: mae
+      PPBR_AZ: mae
+      VDss_Lombardo: spearman
+      Half_Life_Obach: spearman
+    success_threshold_rule:
+      type: relative_to_reference
+      description: >
+        A downstream run is successful when validator gates pass. For lower-is-better
+        metrics such as MAE, the observed metric can increase by at most 0.05 relative
+        to reference. For higher-is-better metrics such as Spearman, the observed metric
+        can drop by at most 0.05 relative to reference.
+      max_primary_metric_drop: 0.05
+      max_primary_metric_increase: 0.05
+    recomputation:
+      enabled: true
+      metric_tolerance: 1.0e-6
+      require_probability_metrics_when_available: false
+      prediction_type: regression
+
+  tdc_tox_binary:
+    primary_metric: roc_auc
+    secondary_metrics:
+      - average_precision
+      - balanced_accuracy
+      - accuracy
+      - macro_f1
+    dataset_metric_overrides:
+      hERG: roc-auc
+      AMES: roc-auc
+      DILI: roc-auc
+    success_threshold_rule:
+      type: relative_to_reference
+      description: >
+        A downstream run is successful when validator gates pass and AUROC is no worse
+        than 0.03 absolute below the deterministic TDC reference pipeline on the same
+        dataset.
+      max_primary_metric_drop: 0.03
+    recomputation:
+      enabled: true
+      metric_tolerance: 1.0e-6
+      require_probability_metrics_when_available: true
+      prediction_type: binary_classification
+
+  scanpy_pancreas_ingest:
+    primary_metric: acc_all
+    secondary_metrics:
+      - acc_conserved
+      - macro_f1
+      - ref_type_coverage
+    required_metrics:
+      - acc_all
+      - acc_conserved
+      - macro_f1
+      - ref_type_coverage
+      - confusion_matrix_path
+    success_threshold_rule:
+      type: relative_to_reference
+      description: >
+        A held-out substrate smoke passes when the selected-segment execution
+        validates and the all-cell mapping accuracy is no worse than 0.03
+        absolute below the deterministic Scanpy ingest reference pipeline for the
+        same mapping task.
+      max_primary_metric_drop: 0.03
+      higher_is_better_metrics:
+        - acc_all
+        - acc_conserved
+        - macro_f1
+        - ref_type_coverage
+    recomputation:
+      enabled: true
+      metric_tolerance: 1.0e-6
+      prediction_type: singlecell_mapping
+
+  tabula_muris_label_transfer:
+    primary_metric: accuracy
+    secondary_metrics:
+      - macro_f1
+      - unknown_rate
+    required_metrics:
+      - accuracy
+      - macro_f1
+      - confusion_matrix_path
+      - unknown_rate
+    success_threshold_rule:
+      type: reference_band
+      description: >
+        A held-out substrate smoke passes when the selected-segment execution
+        validates and the accuracy and macro-F1 remain within the seed-aware
+        lower bound of the stochastic scVI/scANVI reference band, while
+        unknown-rate does not exceed the reference-band ceiling by more than
+        0.05 absolute.
+      reference_seeds:
+        - 0
+        - 1
+      higher_is_better_metrics:
+        - accuracy
+        - macro_f1
+      lower_is_better_metrics:
+        - unknown_rate
+      max_primary_metric_drop_from_band_floor: 0.05
+      max_secondary_metric_drop_from_band_floor: 0.05
+      max_lower_metric_increase_from_band_ceiling: 0.05
+    recomputation:
+      enabled: false
+      metric_tolerance: 1.0e-6
+      prediction_type: singlecell_mapping

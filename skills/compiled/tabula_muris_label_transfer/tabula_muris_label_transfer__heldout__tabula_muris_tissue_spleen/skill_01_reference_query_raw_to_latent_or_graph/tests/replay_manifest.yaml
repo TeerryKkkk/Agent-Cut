@@ -1,0 +1,12 @@
+family_id: tabula_muris_label_transfer
+split_id: tabula_muris_label_transfer__heldout__tabula_muris_tissue_spleen
+skill_id: skill_01_reference_query_raw_to_latent_or_graph
+support_tasks:
+- tabula_muris_tissue_limb_muscle
+- tabula_muris_tissue_lung
+- tabula_muris_tissue_marrow
+expected_validator_role: latent_or_graph
+reference_runs:
+- runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_limb_muscle
+- runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_lung
+- runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_marrow

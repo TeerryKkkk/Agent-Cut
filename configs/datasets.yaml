@@ -1,0 +1,283 @@
+datasets:
+  adult:
+    task_name: adult
+    source: openml
+    task_id: 359983
+    dataset_id: 1590
+    family_id: openml_tabular_binary
+    target_name: class
+    expected_task_type: supervised_classification_binary
+    development_role: support
+    notes: Large mixed-type census income task with missing values.
+
+  credit-g:
+    task_name: credit-g
+    source: openml
+    task_id: 360922
+    dataset_id: 31
+    family_id: openml_tabular_binary
+    target_name: class
+    expected_task_type: supervised_classification_binary
+    development_role: support
+    notes: Compact credit-risk task with heavy categorical structure.
+
+  bank-marketing:
+    task_name: bank-marketing
+    source: openml
+    task_id: 359982
+    dataset_id: 1461
+    family_id: openml_tabular_binary
+    target_name: Class
+    expected_task_type: supervised_classification_binary
+    development_role: heldout
+    notes: Held-out bank marketing task with mixed numeric and categorical inputs.
+
+  HIA_Hou:
+    task_name: HIA_Hou
+    source: tdc
+    benchmark_group: admet_group
+    benchmark_category: ADME
+    benchmark_name: HIA_Hou
+    benchmark_key: hia_hou
+    dataset_id: 4259591
+    family_id: tdc_admet_binary
+    target_name: Y
+    id_column: Drug_ID
+    molecule_column: Drug
+    expected_task_type: supervised_classification_binary
+    official_metric: roc-auc
+    official_split_type: scaffold
+    notes: Human intestinal absorption benchmark from TDC ADMET.
+
+  Pgp_Broccatelli:
+    task_name: Pgp_Broccatelli
+    source: tdc
+    benchmark_group: admet_group
+    benchmark_category: ADME
+    benchmark_name: Pgp_Broccatelli
+    benchmark_key: pgp_broccatelli
+    dataset_id: 4259597
+    family_id: tdc_admet_binary
+    target_name: Y
+    id_column: Drug_ID
+    molecule_column: Drug
+    expected_task_type: supervised_classification_binary
+    official_metric: roc-auc
+    official_split_type: scaffold
+    notes: P-glycoprotein inhibition benchmark from TDC ADMET.
+
+  BBB_Martins:
+    task_name: BBB_Martins
+    source: tdc
+    benchmark_group: admet_group
+    benchmark_category: ADME
+    benchmark_name: BBB_Martins
+    benchmark_key: bbb_martins
+    dataset_id: 4259566
+    family_id: tdc_admet_binary
+    target_name: Y
+    id_column: Drug_ID
+    molecule_column: Drug
+    expected_task_type: supervised_classification_binary
+    official_metric: roc-auc
+    official_split_type: scaffold
+    notes: Blood-brain barrier penetration benchmark from TDC ADMET.
+
+  Bioavailability_Ma:
+    task_name: Bioavailability_Ma
+    source: tdc
+    benchmark_group: admet_group
+    benchmark_category: ADME
+    benchmark_name: Bioavailability_Ma
+    benchmark_key: bioavailability_ma
+    dataset_id: 4259567
+    family_id: tdc_admet_binary
+    target_name: Y
+    id_column: Drug_ID
+    molecule_column: Drug
+    expected_task_type: supervised_classification_binary
+    official_metric: roc-auc
+    official_split_type: scaffold
+    notes: Human oral bioavailability benchmark from TDC ADMET.
+
+  Caco2_Wang:
+    task_name: Caco2_Wang
+    source: tdc
+    benchmark_group: admet_group
+    benchmark_category: ADME
+    benchmark_name: Caco2_Wang
+    benchmark_key: caco2_wang
+    dataset_id: 4259569
+    family_id: tdc_admet_regression
+    target_name: Y
+    id_column: Drug_ID
+    molecule_column: Drug
+    expected_task_type: supervised_regression
+    official_metric: mae
+    official_split_type: scaffold
+    notes: Caco-2 permeability benchmark from TDC ADMET.
+
+  Lipophilicity_AstraZeneca:
+    task_name: Lipophilicity_AstraZeneca
+    source: tdc
+    benchmark_group: admet_group
+    benchmark_category: ADME
+    benchmark_name: Lipophilicity_AstraZeneca
+    benchmark_key: lipophilicity_astrazeneca
+    dataset_id: 4259595
+    family_id: tdc_admet_regression
+    target_name: Y
+    id_column: Drug_ID
+    molecule_column: Drug
+    expected_task_type: supervised_regression
+    official_metric: mae
+    official_split_type: scaffold
+    notes: Lipophilicity regression benchmark from TDC ADMET.
+
+  PPBR_AZ:
+    task_name: PPBR_AZ
+    source: tdc
+    benchmark_group: admet_group
+    benchmark_category: ADME
+    benchmark_name: PPBR_AZ
+    benchmark_key: ppbr_az
+    dataset_id: 6413140
+    family_id: tdc_admet_regression
+    target_name: Y
+    id_column: Drug_ID
+    molecule_column: Drug
+    expected_task_type: supervised_regression
+    official_metric: mae
+    official_split_type: scaffold
+    notes: Plasma protein binding rate benchmark from TDC ADMET.
+
+  VDss_Lombardo:
+    task_name: VDss_Lombardo
+    source: tdc
+    benchmark_group: admet_group
+    benchmark_category: ADME
+    benchmark_name: VDss_Lombardo
+    benchmark_key: vdss_lombardo
+    dataset_id: 4267387
+    family_id: tdc_admet_regression
+    target_name: Y
+    id_column: Drug_ID
+    molecule_column: Drug
+    expected_task_type: supervised_regression
+    official_metric: spearman
+    official_split_type: scaffold
+    notes: Volume of distribution at steady state benchmark from TDC ADMET.
+
+  Half_Life_Obach:
+    task_name: Half_Life_Obach
+    source: tdc
+    benchmark_group: admet_group
+    benchmark_category: ADME
+    benchmark_name: Half_Life_Obach
+    benchmark_key: half_life_obach
+    dataset_id: 4266799
+    family_id: tdc_admet_regression
+    target_name: Y
+    id_column: Drug_ID
+    molecule_column: Drug
+    expected_task_type: supervised_regression
+    official_metric: spearman
+    official_split_type: scaffold
+    notes: Half-life regression benchmark from TDC ADMET.
+
+  hERG:
+    task_name: hERG
+    source: tdc
+    benchmark_group: admet_group
+    benchmark_category: Tox
+    benchmark_name: hERG
+    benchmark_key: herg
+    dataset_id: 4259588
+    family_id: tdc_tox_binary
+    target_name: Y
+    id_column: Drug_ID
+    molecule_column: Drug
+    expected_task_type: supervised_classification_binary
+    official_metric: roc-auc
+    official_split_type: scaffold
+    notes: hERG channel inhibition toxicity benchmark from TDC ADMET.
+
+  AMES:
+    task_name: AMES
+    source: tdc
+    benchmark_group: admet_group
+    benchmark_category: Tox
+    benchmark_name: AMES
+    benchmark_key: ames
+    dataset_id: 4259564
+    family_id: tdc_tox_binary
+    target_name: Y
+    id_column: Drug_ID
+    molecule_column: Drug
+    expected_task_type: supervised_classification_binary
+    official_metric: roc-auc
+    official_split_type: scaffold
+    notes: Ames mutagenicity toxicity benchmark from TDC ADMET.
+
+  DILI:
+    task_name: DILI
+    source: tdc
+    benchmark_group: admet_group
+    benchmark_category: Tox
+    benchmark_name: DILI
+    benchmark_key: dili
+    dataset_id: 4259585
+    family_id: tdc_tox_binary
+    target_name: Y
+    id_column: Drug_ID
+    molecule_column: Drug
+    expected_task_type: supervised_classification_binary
+    official_metric: roc-auc
+    official_split_type: scaffold
+    notes: Drug-induced liver injury toxicity benchmark from TDC ADMET.
+
+  pancreas:
+    task_name: pancreas
+    source: scanpy
+    family_id: scanpy_pancreas_ingest
+    expected_task_type: singlecell_mapping_reference_query
+    obs_keys:
+      - batch
+      - celltype
+    backup_url: https://www.dropbox.com/s/qj1jlm9w10wmt0u/pancreas.h5ad?dl=1
+    notes: >
+      Curated human pancreas batch integration dataset used in the official Scanpy
+      ingest tutorial. Task instances are derived from batch-level reference/query
+      pairs after removing the five smallest cell types, matching the tutorial.
+
+  TM_droplet:
+    task_name: TM_droplet
+    source: scvi_tools
+    family_id: tabula_muris_label_transfer
+    expected_task_type: singlecell_mapping_reference_query
+    technology: 10x
+    obs_keys:
+      - tissue
+      - sex
+      - cell_ontology_class
+    backup_url: https://ndownloader.figshare.com/files/23938934
+    notes: >
+      Tabula Muris droplet 10x raw-count AnnData used as the tutorial-consistent
+      query side for label transfer tasks.
+
+  TM_facs:
+    task_name: TM_facs
+    source: scvi_tools
+    family_id: tabula_muris_label_transfer
+    expected_task_type: singlecell_mapping_reference_query
+    technology: SS2
+    obs_keys:
+      - tissue
+      - sex
+      - cell_ontology_class
+    backup_url: https://ndownloader.figshare.com/files/23939711
+    gene_length_url: https://raw.githubusercontent.com/chenlingantelope/HarmonizationSCANVI/master/data/gene_len.txt
+    notes: >
+      Tabula Muris FACS SmartSeq2 raw-count AnnData used as the tutorial-consistent
+      labeled reference side for scVI/scANVI transfer tasks, including gene-length
+      normalization before concatenation.

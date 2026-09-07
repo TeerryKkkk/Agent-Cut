@@ -1,0 +1,130 @@
+{
+  "credit-g": [
+    {
+      "step_id": "step_02_profile_dataset",
+      "role_in": "raw_data",
+      "role_out": "profile_json",
+      "input_artifacts": [
+        "runs/reference/openml_tabular_binary/credit-g/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/openml_tabular_binary/credit-g/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/openml_tabular_binary/credit-g/artifacts/profile.json"
+      ],
+      "function": "build_profile",
+      "status": "pass",
+      "wall_clock_s": 0.004861,
+      "details": {
+        "feature_count": 20
+      }
+    },
+    {
+      "step_id": "step_03_define_split",
+      "role_in": "profile_json",
+      "role_out": "split_spec_json",
+      "input_artifacts": [
+        "runs/reference/openml_tabular_binary/credit-g/artifacts/profile.json",
+        "runs/reference/openml_tabular_binary/credit-g/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/openml_tabular_binary/credit-g/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/openml_tabular_binary/credit-g/artifacts/split_spec.json"
+      ],
+      "function": "build_split_spec",
+      "status": "pass",
+      "wall_clock_s": 0.00563,
+      "details": {
+        "train_size": 900,
+        "test_size": 100
+      }
+    },
+    {
+      "step_id": "step_04_fit_preprocess",
+      "role_in": "split_spec_json",
+      "role_out": "preprocess_bundle",
+      "input_artifacts": [
+        "runs/reference/openml_tabular_binary/credit-g/artifacts/split_spec.json",
+        "runs/reference/openml_tabular_binary/credit-g/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/openml_tabular_binary/credit-g/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/openml_tabular_binary/credit-g/artifacts/preprocess_bundle/preprocessor.joblib",
+        "runs/reference/openml_tabular_binary/credit-g/artifacts/preprocess_bundle/train_matrix.npy",
+        "runs/reference/openml_tabular_binary/credit-g/artifacts/preprocess_bundle/test_matrix.npy",
+        "runs/reference/openml_tabular_binary/credit-g/artifacts/preprocess_bundle/train_labels.npy",
+        "runs/reference/openml_tabular_binary/credit-g/artifacts/preprocess_bundle/test_labels.npy",
+        "runs/reference/openml_tabular_binary/credit-g/artifacts/preprocess_bundle/manifest.json"
+      ],
+      "function": "build_preprocess_bundle",
+      "status": "pass",
+      "wall_clock_s": 0.020286,
+      "details": {
+        "transformed_feature_count": 61
+      }
+    }
+  ],
+  "bank-marketing": [
+    {
+      "step_id": "step_02_profile_dataset",
+      "role_in": "raw_data",
+      "role_out": "profile_json",
+      "input_artifacts": [
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/profile.json"
+      ],
+      "function": "build_profile",
+      "status": "pass",
+      "wall_clock_s": 0.005414,
+      "details": {
+        "feature_count": 16
+      }
+    },
+    {
+      "step_id": "step_03_define_split",
+      "role_in": "profile_json",
+      "role_out": "split_spec_json",
+      "input_artifacts": [
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/profile.json",
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/split_spec.json"
+      ],
+      "function": "build_split_spec",
+      "status": "pass",
+      "wall_clock_s": 0.022065,
+      "details": {
+        "train_size": 40689,
+        "test_size": 4522
+      }
+    },
+    {
+      "step_id": "step_04_fit_preprocess",
+      "role_in": "split_spec_json",
+      "role_out": "preprocess_bundle",
+      "input_artifacts": [
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/split_spec.json",
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/preprocess_bundle/preprocessor.joblib",
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/preprocess_bundle/train_matrix.npy",
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/preprocess_bundle/test_matrix.npy",
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/preprocess_bundle/train_labels.npy",
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/preprocess_bundle/test_labels.npy",
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/preprocess_bundle/manifest.json"
+      ],
+      "function": "build_preprocess_bundle",
+      "status": "pass",
+      "wall_clock_s": 0.114011,
+      "details": {
+        "transformed_feature_count": 51
+      }
+    }
+  ]
+}

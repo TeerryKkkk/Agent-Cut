@@ -1,0 +1,12 @@
+family_id: tabula_muris_label_transfer
+split_id: tabula_muris_label_transfer__heldout__tabula_muris_tissue_lung
+skill_id: skill_04_mapping_metrics_to_report_md
+support_tasks:
+- tabula_muris_tissue_limb_muscle
+- tabula_muris_tissue_marrow
+- tabula_muris_tissue_spleen
+expected_validator_role: report_md
+reference_runs:
+- runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_limb_muscle
+- runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_marrow
+- runs/reference/tabula_muris_label_transfer/tabula_muris_tissue_spleen

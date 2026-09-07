@@ -1,0 +1,270 @@
+{
+  "Caco2_Wang": [
+    {
+      "step_id": "step_02_profile_dataset",
+      "role_in": "raw_data",
+      "role_out": "profile_json",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/profile.json"
+      ],
+      "function": "build_profile",
+      "status": "pass",
+      "wall_clock_s": 0.005492,
+      "details": {
+        "valid_smiles_count": 910
+      }
+    },
+    {
+      "step_id": "step_03_define_split",
+      "role_in": "profile_json",
+      "role_out": "split_spec_json",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/profile.json",
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/split_spec.json"
+      ],
+      "function": "build_split_spec",
+      "status": "pass",
+      "wall_clock_s": 0.002189,
+      "details": {
+        "train_size": 637,
+        "valid_size": 91,
+        "test_size": 182
+      }
+    },
+    {
+      "step_id": "step_04_fit_preprocess",
+      "role_in": "split_spec_json",
+      "role_out": "preprocess_bundle",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/split_spec.json",
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/preprocess_bundle/preprocessor.joblib",
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/preprocess_bundle/train_matrix.npy",
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/preprocess_bundle/valid_matrix.npy",
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/preprocess_bundle/test_matrix.npy",
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/preprocess_bundle/train_labels.npy",
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/preprocess_bundle/valid_labels.npy",
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/preprocess_bundle/test_labels.npy",
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/preprocess_bundle/manifest.json"
+      ],
+      "function": "build_preprocess_bundle",
+      "status": "pass",
+      "wall_clock_s": 0.073595,
+      "details": {
+        "transformed_feature_count": 2048
+      }
+    }
+  ],
+  "Lipophilicity_AstraZeneca": [
+    {
+      "step_id": "step_02_profile_dataset",
+      "role_in": "raw_data",
+      "role_out": "profile_json",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/profile.json"
+      ],
+      "function": "build_profile",
+      "status": "pass",
+      "wall_clock_s": 0.008463,
+      "details": {
+        "valid_smiles_count": 4200
+      }
+    },
+    {
+      "step_id": "step_03_define_split",
+      "role_in": "profile_json",
+      "role_out": "split_spec_json",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/profile.json",
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/split_spec.json"
+      ],
+      "function": "build_split_spec",
+      "status": "pass",
+      "wall_clock_s": 0.004512,
+      "details": {
+        "train_size": 2940,
+        "valid_size": 420,
+        "test_size": 840
+      }
+    },
+    {
+      "step_id": "step_04_fit_preprocess",
+      "role_in": "split_spec_json",
+      "role_out": "preprocess_bundle",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/split_spec.json",
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/preprocess_bundle/preprocessor.joblib",
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/preprocess_bundle/train_matrix.npy",
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/preprocess_bundle/valid_matrix.npy",
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/preprocess_bundle/test_matrix.npy",
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/preprocess_bundle/train_labels.npy",
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/preprocess_bundle/valid_labels.npy",
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/preprocess_bundle/test_labels.npy",
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/preprocess_bundle/manifest.json"
+      ],
+      "function": "build_preprocess_bundle",
+      "status": "pass",
+      "wall_clock_s": 0.274951,
+      "details": {
+        "transformed_feature_count": 2048
+      }
+    }
+  ],
+  "PPBR_AZ": [
+    {
+      "step_id": "step_02_profile_dataset",
+      "role_in": "raw_data",
+      "role_out": "profile_json",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/profile.json"
+      ],
+      "function": "build_profile",
+      "status": "pass",
+      "wall_clock_s": 0.006499,
+      "details": {
+        "valid_smiles_count": 2790
+      }
+    },
+    {
+      "step_id": "step_03_define_split",
+      "role_in": "profile_json",
+      "role_out": "split_spec_json",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/profile.json",
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/split_spec.json"
+      ],
+      "function": "build_split_spec",
+      "status": "pass",
+      "wall_clock_s": 0.003668,
+      "details": {
+        "train_size": 1952,
+        "valid_size": 279,
+        "test_size": 559
+      }
+    },
+    {
+      "step_id": "step_04_fit_preprocess",
+      "role_in": "split_spec_json",
+      "role_out": "preprocess_bundle",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/split_spec.json",
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/preprocess_bundle/preprocessor.joblib",
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/preprocess_bundle/train_matrix.npy",
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/preprocess_bundle/valid_matrix.npy",
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/preprocess_bundle/test_matrix.npy",
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/preprocess_bundle/train_labels.npy",
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/preprocess_bundle/valid_labels.npy",
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/preprocess_bundle/test_labels.npy",
+        "runs/reference/tdc_admet_regression/PPBR_AZ/artifacts/preprocess_bundle/manifest.json"
+      ],
+      "function": "build_preprocess_bundle",
+      "status": "pass",
+      "wall_clock_s": 0.181204,
+      "details": {
+        "transformed_feature_count": 2048
+      }
+    }
+  ],
+  "VDss_Lombardo": [
+    {
+      "step_id": "step_02_profile_dataset",
+      "role_in": "raw_data",
+      "role_out": "profile_json",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_regression/VDss_Lombardo/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/tdc_admet_regression/VDss_Lombardo/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_regression/VDss_Lombardo/artifacts/profile.json"
+      ],
+      "function": "build_profile",
+      "status": "pass",
+      "wall_clock_s": 0.005539,
+      "details": {
+        "valid_smiles_count": 1130
+      }
+    },
+    {
+      "step_id": "step_03_define_split",
+      "role_in": "profile_json",
+      "role_out": "split_spec_json",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_regression/VDss_Lombardo/artifacts/profile.json",
+        "runs/reference/tdc_admet_regression/VDss_Lombardo/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/tdc_admet_regression/VDss_Lombardo/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_regression/VDss_Lombardo/artifacts/split_spec.json"
+      ],
+      "function": "build_split_spec",
+      "status": "pass",
+      "wall_clock_s": 0.002611,
+      "details": {
+        "train_size": 791,
+        "valid_size": 113,
+        "test_size": 226
+      }
+    },
+    {
+      "step_id": "step_04_fit_preprocess",
+      "role_in": "split_spec_json",
+      "role_out": "preprocess_bundle",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_regression/VDss_Lombardo/artifacts/split_spec.json",
+        "runs/reference/tdc_admet_regression/VDss_Lombardo/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/tdc_admet_regression/VDss_Lombardo/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_regression/VDss_Lombardo/artifacts/preprocess_bundle/preprocessor.joblib",
+        "runs/reference/tdc_admet_regression/VDss_Lombardo/artifacts/preprocess_bundle/train_matrix.npy",
+        "runs/reference/tdc_admet_regression/VDss_Lombardo/artifacts/preprocess_bundle/valid_matrix.npy",
+        "runs/reference/tdc_admet_regression/VDss_Lombardo/artifacts/preprocess_bundle/test_matrix.npy",
+        "runs/reference/tdc_admet_regression/VDss_Lombardo/artifacts/preprocess_bundle/train_labels.npy",
+        "runs/reference/tdc_admet_regression/VDss_Lombardo/artifacts/preprocess_bundle/valid_labels.npy",
+        "runs/reference/tdc_admet_regression/VDss_Lombardo/artifacts/preprocess_bundle/test_labels.npy",
+        "runs/reference/tdc_admet_regression/VDss_Lombardo/artifacts/preprocess_bundle/manifest.json"
+      ],
+      "function": "build_preprocess_bundle",
+      "status": "pass",
+      "wall_clock_s": 0.08841,
+      "details": {
+        "transformed_feature_count": 2048
+      }
+    }
+  ]
+}

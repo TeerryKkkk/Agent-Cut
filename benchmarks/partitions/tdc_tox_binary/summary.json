@@ -1,0 +1,14 @@
+{
+  "family_id": "tdc_tox_binary",
+  "role_template": [
+    "raw_data",
+    "profile_json",
+    "split_spec_json",
+    "preprocess_bundle",
+    "model_bundle",
+    "metrics_json",
+    "report_md"
+  ],
+  "legal_segment_count": 21,
+  "legal_partition_count": 32
+}

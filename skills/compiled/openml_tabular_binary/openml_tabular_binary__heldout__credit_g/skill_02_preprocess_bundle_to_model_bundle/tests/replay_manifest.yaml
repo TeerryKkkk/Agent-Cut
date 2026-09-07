@@ -1,0 +1,10 @@
+family_id: openml_tabular_binary
+split_id: openml_tabular_binary__heldout__credit_g
+skill_id: skill_02_preprocess_bundle_to_model_bundle
+support_tasks:
+- adult
+- bank-marketing
+expected_validator_role: model_bundle
+reference_runs:
+- runs/reference/openml_tabular_binary/adult
+- runs/reference/openml_tabular_binary/bank-marketing

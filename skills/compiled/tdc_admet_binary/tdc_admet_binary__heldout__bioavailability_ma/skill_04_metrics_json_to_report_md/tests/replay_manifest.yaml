@@ -1,0 +1,12 @@
+family_id: tdc_admet_binary
+split_id: tdc_admet_binary__heldout__bioavailability_ma
+skill_id: skill_04_metrics_json_to_report_md
+support_tasks:
+- HIA_Hou
+- Pgp_Broccatelli
+- BBB_Martins
+expected_validator_role: report_md
+reference_runs:
+- runs/reference/tdc_admet_binary/HIA_Hou
+- runs/reference/tdc_admet_binary/Pgp_Broccatelli
+- runs/reference/tdc_admet_binary/BBB_Martins

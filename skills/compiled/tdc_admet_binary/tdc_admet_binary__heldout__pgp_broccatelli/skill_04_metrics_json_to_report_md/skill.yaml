@@ -1,0 +1,33 @@
+family_id: tdc_admet_binary
+split_id: tdc_admet_binary__heldout__pgp_broccatelli
+skill_id: skill_04_metrics_json_to_report_md
+name: skill-04-metrics-json-to-report-md
+description: Compiled predictive skill for metrics_json to report_md.
+selected_partition_id: partition_025
+role_start: metrics_json
+role_end: report_md
+role_sequence:
+- metrics_json
+- report_md
+step_specs:
+- step_id: step_07_write_report
+  role_in: metrics_json
+  role_out: report_md
+  function_name: build_report
+validator_role: report_md
+support_tasks:
+- HIA_Hou
+- BBB_Martins
+- Bioavailability_Ma
+heldout_task: Pgp_Broccatelli
+input_contract:
+  primary_input_role: metrics_json
+  artifacts_are_explicit: true
+  portable_paths_only: true
+output_contract:
+  output_role: report_md
+  validator_required: true
+  scientifically_meaningful_artifact: true
+replay_entrypoint:
+  module: runtime.support_replay
+  callable: replay_skill_on_task

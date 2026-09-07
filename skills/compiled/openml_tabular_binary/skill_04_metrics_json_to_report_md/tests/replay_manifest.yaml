@@ -1,0 +1,8 @@
+skill_id: skill_04_metrics_json_to_report_md
+support_tasks:
+- adult
+- credit-g
+expected_validator_role: report_md
+reference_runs:
+- runs/reference/openml_tabular_binary/adult
+- runs/reference/openml_tabular_binary/credit-g

@@ -1,0 +1,46 @@
+{
+  "AMES": [
+    {
+      "step_id": "step_06_compute_metrics",
+      "role_in": "model_bundle",
+      "role_out": "metrics_json",
+      "input_artifacts": [
+        "runs/reference/tdc_tox_binary/AMES/artifacts/model_bundle/model.joblib",
+        "runs/reference/tdc_tox_binary/AMES/artifacts/model_bundle/predictions.csv",
+        "runs/reference/tdc_tox_binary/AMES/artifacts/model_bundle/smoke_input.npy",
+        "runs/reference/tdc_tox_binary/AMES/artifacts/model_bundle/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_tox_binary/AMES/artifacts/metrics.json"
+      ],
+      "function": "build_metrics",
+      "status": "pass",
+      "wall_clock_s": 0.0233,
+      "details": {
+        "primary_metric_value": 0.7642023536783568
+      }
+    }
+  ],
+  "DILI": [
+    {
+      "step_id": "step_06_compute_metrics",
+      "role_in": "model_bundle",
+      "role_out": "metrics_json",
+      "input_artifacts": [
+        "runs/reference/tdc_tox_binary/DILI/artifacts/model_bundle/model.joblib",
+        "runs/reference/tdc_tox_binary/DILI/artifacts/model_bundle/predictions.csv",
+        "runs/reference/tdc_tox_binary/DILI/artifacts/model_bundle/smoke_input.npy",
+        "runs/reference/tdc_tox_binary/DILI/artifacts/model_bundle/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_tox_binary/DILI/artifacts/metrics.json"
+      ],
+      "function": "build_metrics",
+      "status": "pass",
+      "wall_clock_s": 0.009342,
+      "details": {
+        "primary_metric_value": 0.8195652173913044
+      }
+    }
+  ]
+}

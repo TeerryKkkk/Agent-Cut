@@ -1,0 +1,33 @@
+family_id: tabula_muris_label_transfer
+split_id: tabula_muris_label_transfer__heldout__tabula_muris_tissue_limb_muscle
+skill_id: skill_03_predicted_labels_to_mapping_metrics
+name: skill-03-predicted-labels-to-mapping-metrics
+description: Compiled predictive skill for predicted_labels to mapping_metrics.
+selected_partition_id: partition_009
+role_start: predicted_labels
+role_end: mapping_metrics
+role_sequence:
+- predicted_labels
+- mapping_metrics
+step_specs:
+- step_id: step_05_compute_mapping_metrics
+  role_in: predicted_labels
+  role_out: mapping_metrics
+  function_name: build_mapping_metrics
+validator_role: mapping_metrics
+support_tasks:
+- tabula_muris_tissue_lung
+- tabula_muris_tissue_marrow
+- tabula_muris_tissue_spleen
+heldout_task: tabula_muris_tissue_limb_muscle
+input_contract:
+  primary_input_role: predicted_labels
+  artifacts_are_explicit: true
+  portable_paths_only: true
+output_contract:
+  output_role: mapping_metrics
+  validator_required: true
+  scientifically_meaningful_artifact: true
+replay_entrypoint:
+  module: runtime.support_replay
+  callable: replay_skill_on_task

@@ -1,0 +1,8 @@
+skill_id: skill_01_raw_data_to_preprocess_bundle
+support_tasks:
+- adult
+- credit-g
+expected_validator_role: preprocess_bundle
+reference_runs:
+- runs/reference/openml_tabular_binary/adult
+- runs/reference/openml_tabular_binary/credit-g

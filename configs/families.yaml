@@ -1,0 +1,374 @@
+families:
+  openml_tabular_binary:
+    family_id: openml_tabular_binary
+    family_type: predictive
+    source: openml
+    description: >
+      Deterministic binary tabular prediction workflows grounded in official OpenML
+      task semantics and decomposed over validator-bearing intermediate artifacts.
+    role_template:
+      - raw_data
+      - profile_json
+      - split_spec_json
+      - preprocess_bundle
+      - model_bundle
+      - metrics_json
+      - report_md
+    datasets:
+      - adult
+      - credit-g
+      - bank-marketing
+    primary_metric: balanced_accuracy
+    split_rule:
+      family_partition_mode: leave_one_dataset_out
+      within_dataset_source: openml_official_task_split
+      repeat: 0
+      fold: 0
+      sample: 0
+      partition_unit: task_name
+      lodo_enabled: true
+    reference_pipeline:
+      module: pipelines.ref_openml_binary
+      runner_class: OpenMLBinaryReferenceRunner
+    validator_module: validators.predictive_roles
+    reference_recipe:
+      name: deterministic_logistic_baseline
+      random_seed: 13
+      preprocessing:
+        numeric:
+          - median_impute
+          - standard_scale
+        categorical:
+          - most_frequent_impute
+          - one_hot_ignore_unknown
+      estimator:
+        kind: LogisticRegression
+        solver: liblinear
+        class_weight: balanced
+        max_iter: 600
+    validator_roles:
+      - profile_json
+      - split_spec_json
+      - preprocess_bundle
+      - model_bundle
+      - metrics_json
+      - report_md
+    dev_split:
+      split_id: openml_dev_bank_marketing
+      support_tasks:
+        - adult
+        - credit-g
+      heldout_task: bank-marketing
+
+  tdc_admet_binary:
+    family_id: tdc_admet_binary
+    family_type: predictive
+    source: tdc
+    benchmark_group: admet_group
+    benchmark_category: ADME
+    description: >
+      Deterministic binary molecular property prediction workflows over the TDC ADMET
+      benchmark group using scaffold benchmark splits and leave-one-dataset-out
+      sibling-task family partitions.
+    role_template:
+      - raw_data
+      - profile_json
+      - split_spec_json
+      - preprocess_bundle
+      - model_bundle
+      - metrics_json
+      - report_md
+    datasets:
+      - HIA_Hou
+      - Pgp_Broccatelli
+      - BBB_Martins
+      - Bioavailability_Ma
+    primary_metric: roc_auc
+    split_rule:
+      family_partition_mode: leave_one_dataset_out
+      within_dataset_source: tdc_benchmark_group
+      official_split_type: scaffold
+      partition_unit: task_name
+      validation_split_source: tdc_benchmark_group_train_valid
+    reference_pipeline:
+      module: pipelines.ref_tdc_binary
+      runner_class: TDCBinaryReferenceRunner
+    validator_module: validators.predictive_roles
+    reference_recipe:
+      name: deterministic_smiles_hash_logistic_baseline
+      random_seed: 13
+      preprocessing:
+        molecule:
+          featurizer: smiles_char_ngram_hashing
+          n_features: 2048
+          ngram_range:
+            - 1
+            - 3
+          canonicalize_smiles: false
+      estimator:
+        kind: LogisticRegression
+        solver: liblinear
+        class_weight: balanced
+        max_iter: 600
+    validator_roles:
+      - profile_json
+      - split_spec_json
+      - preprocess_bundle
+      - model_bundle
+      - metrics_json
+      - report_md
+    dev_split:
+      split_id: tdc_admet_binary_dev_bbb
+      support_tasks:
+        - HIA_Hou
+        - Pgp_Broccatelli
+        - Bioavailability_Ma
+      heldout_task: BBB_Martins
+
+  tdc_admet_regression:
+    family_id: tdc_admet_regression
+    family_type: predictive
+    source: tdc
+    benchmark_group: admet_group
+    benchmark_category: ADME
+    description: >
+      Deterministic molecular regression workflows over TDC ADMET datasets with
+      scaffold benchmark splits and leave-one-dataset-out family execution.
+    role_template:
+      - raw_data
+      - profile_json
+      - split_spec_json
+      - preprocess_bundle
+      - model_bundle
+      - metrics_json
+      - report_md
+    datasets:
+      - Caco2_Wang
+      - Lipophilicity_AstraZeneca
+      - PPBR_AZ
+      - VDss_Lombardo
+      - Half_Life_Obach
+    primary_metric: mae
+    split_rule:
+      family_partition_mode: leave_one_dataset_out
+      within_dataset_source: tdc_benchmark_group
+      official_split_type: scaffold
+      partition_unit: task_name
+      validation_split_source: tdc_benchmark_group_train_valid
+    reference_pipeline:
+      module: pipelines.ref_tdc_regression
+      runner_class: TDCRegressionReferenceRunner
+    validator_module: validators.predictive_roles
+    reference_recipe:
+      name: deterministic_smiles_hash_ridge_baseline
+      random_seed: 13
+      preprocessing:
+        molecule:
+          featurizer: smiles_char_ngram_hashing
+          n_features: 2048
+          ngram_range:
+            - 1
+            - 3
+          canonicalize_smiles: false
+      estimator:
+        kind: Ridge
+        alpha: 1.0
+    validator_roles:
+      - profile_json
+      - split_spec_json
+      - preprocess_bundle
+      - model_bundle
+      - metrics_json
+      - report_md
+    dev_split:
+      split_id: tdc_admet_regression_dev_vdss
+      support_tasks:
+        - Caco2_Wang
+        - Lipophilicity_AstraZeneca
+        - PPBR_AZ
+        - Half_Life_Obach
+      heldout_task: VDss_Lombardo
+
+  tdc_tox_binary:
+    family_id: tdc_tox_binary
+    family_type: predictive
+    source: tdc
+    benchmark_group: admet_group
+    benchmark_category: Tox
+    description: >
+      Deterministic binary molecular toxicity prediction workflows over TDC toxicity
+      datasets with scaffold benchmark splits and leave-one-dataset-out family
+      execution.
+    role_template:
+      - raw_data
+      - profile_json
+      - split_spec_json
+      - preprocess_bundle
+      - model_bundle
+      - metrics_json
+      - report_md
+    datasets:
+      - hERG
+      - AMES
+      - DILI
+    primary_metric: roc_auc
+    split_rule:
+      family_partition_mode: leave_one_dataset_out
+      within_dataset_source: tdc_benchmark_group
+      official_split_type: scaffold
+      partition_unit: task_name
+      validation_split_source: tdc_benchmark_group_train_valid
+    reference_pipeline:
+      module: pipelines.ref_tdc_binary
+      runner_class: TDCBinaryReferenceRunner
+    validator_module: validators.predictive_roles
+    reference_recipe:
+      name: deterministic_smiles_hash_logistic_baseline
+      random_seed: 13
+      preprocessing:
+        molecule:
+          featurizer: smiles_char_ngram_hashing
+          n_features: 2048
+          ngram_range:
+            - 1
+            - 3
+          canonicalize_smiles: false
+      estimator:
+        kind: LogisticRegression
+        solver: liblinear
+        class_weight: balanced
+        max_iter: 600
+    validator_roles:
+      - profile_json
+      - split_spec_json
+      - preprocess_bundle
+      - model_bundle
+      - metrics_json
+      - report_md
+    dev_split:
+      split_id: tdc_tox_binary_dev_dili
+      support_tasks:
+        - hERG
+        - AMES
+      heldout_task: DILI
+
+  scanpy_pancreas_ingest:
+    family_id: scanpy_pancreas_ingest
+    family_type: singlecell_mapping
+    result_namespace: singlecell_substrate
+    source: scanpy
+    description: >
+      Scanpy ingest-style single-cell pancreas reference/query mapping workflows
+      over batch-level task instances with explicit validator-bearing intermediate
+      artifacts.
+    role_template:
+      - reference_query_raw
+      - prepared_query
+      - latent_or_graph
+      - predicted_labels
+      - mapping_metrics
+      - report_md
+    datasets:
+      - pancreas
+    task_loader:
+      module: tasks.scanpy_ingest_tasks
+      write_callable: write_family_manifests
+      list_callable: list_task_names
+      load_callable: load_task_manifest
+      summary_callable: load_family_summary
+    primary_metric: acc_all
+    split_rule:
+      family_partition_mode: leave_one_task_out
+      partition_unit: mapping_task_instance
+      reference_batch_min_cells: 1000
+      reference_batch_min_coverage_ratio: 0.6
+      pancreas_minority_celltypes_removed: 5
+      global_celltype_coverage_denominator: cleaned_pancreas_vocab
+    reference_pipeline:
+      module: pipelines.ref_scanpy_ingest
+      runner_class: ScanpyIngestReferenceRunner
+    validator_module: validators.singlecell_mapping_roles
+    reference_recipe:
+      name: tutorial_consistent_scanpy_ingest
+      random_seed: 0
+      pca_n_comps: 50
+      n_neighbors: 15
+      umap_min_dist: 0.5
+      embedding_method:
+        - umap
+        - pca
+      labeling_obs: celltype
+      use_existing_processed_matrix: true
+    validator_roles:
+      - reference_query_raw
+      - prepared_query
+      - latent_or_graph
+      - predicted_labels
+      - mapping_metrics
+      - report_md
+    dev_split_policy:
+      type: first_split_sorted_by_split_id
+
+  tabula_muris_label_transfer:
+    family_id: tabula_muris_label_transfer
+    family_type: singlecell_mapping
+    result_namespace: singlecell_substrate
+    source: scvi_tools
+    description: >
+      Tutorial-consistent Tabula Muris droplet versus FACS label transfer
+      workflows using scVI and scANVI over deterministic leave-one-tissue-out
+      family splits.
+    role_template:
+      - reference_query_raw
+      - prepared_query
+      - latent_or_graph
+      - predicted_labels
+      - mapping_metrics
+      - report_md
+    datasets:
+      - TM_droplet
+      - TM_facs
+    task_loader:
+      module: tasks.tabula_muris_tasks
+      write_callable: write_family_manifests
+      list_callable: list_task_names
+      load_callable: load_task_manifest
+      summary_callable: load_family_summary
+    primary_metric: accuracy
+    split_rule:
+      family_partition_mode: leave_one_tissue_out
+      partition_unit: tissue
+      sex_filter: female
+      min_cells_per_technology: 500
+      min_cell_ontology_classes: 5
+      top_tissues_limit: 4
+      tissue_ranking_rule: total_female_sharedtech_cells_desc_then_tissue_asc
+    reference_pipeline:
+      module: pipelines.ref_scanvi_label_transfer
+      runner_class: ScanviLabelTransferReferenceRunner
+    validator_module: validators.singlecell_mapping_roles
+    reference_recipe:
+      name: tutorial_consistent_scanvi_label_transfer
+      random_seeds:
+        - 0
+        - 1
+      highly_variable_n_top_genes: 2000
+      n_latent: 30
+      scvi_max_epochs: 20
+      scanvi_max_epochs: 20
+      n_samples_per_label: 100
+      batch_size: 256
+      batch_key: tech
+      labels_key: celltype_scanvi
+      unlabeled_category: Unknown
+      accelerator: auto
+      devices: 1
+    validator_roles:
+      - reference_query_raw
+      - prepared_query
+      - latent_or_graph
+      - predicted_labels
+      - mapping_metrics
+      - report_md
+    dev_split_policy:
+      type: first_split_sorted_by_split_id

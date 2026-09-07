@@ -1,0 +1,46 @@
+{
+  "credit-g": [
+    {
+      "step_id": "step_06_compute_metrics",
+      "role_in": "model_bundle",
+      "role_out": "metrics_json",
+      "input_artifacts": [
+        "runs/reference/openml_tabular_binary/credit-g/artifacts/model_bundle/model.joblib",
+        "runs/reference/openml_tabular_binary/credit-g/artifacts/model_bundle/predictions.csv",
+        "runs/reference/openml_tabular_binary/credit-g/artifacts/model_bundle/smoke_input.npy",
+        "runs/reference/openml_tabular_binary/credit-g/artifacts/model_bundle/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/openml_tabular_binary/credit-g/artifacts/metrics.json"
+      ],
+      "function": "build_metrics",
+      "status": "pass",
+      "wall_clock_s": 0.005001,
+      "details": {
+        "primary_metric_value": 0.7738095238095238
+      }
+    }
+  ],
+  "bank-marketing": [
+    {
+      "step_id": "step_06_compute_metrics",
+      "role_in": "model_bundle",
+      "role_out": "metrics_json",
+      "input_artifacts": [
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/model_bundle/model.joblib",
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/model_bundle/predictions.csv",
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/model_bundle/smoke_input.npy",
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/model_bundle/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/openml_tabular_binary/bank-marketing/artifacts/metrics.json"
+      ],
+      "function": "build_metrics",
+      "status": "pass",
+      "wall_clock_s": 0.032612,
+      "details": {
+        "primary_metric_value": 0.8341192076682398
+      }
+    }
+  ]
+}

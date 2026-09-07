@@ -1,0 +1,9 @@
+{
+  "family_id": "scanpy_pancreas_ingest",
+  "split_id": "scanpy_pancreas_ingest__heldout__pancreas_ref_batch_0__query_batch_1",
+  "skill_id": "skill_01_reference_query_raw_to_latent_or_graph",
+  "task_name": "{{task_name}}",
+  "run_namespace": "support_replay",
+  "start_role": "reference_query_raw",
+  "end_role": "latent_or_graph"
+}

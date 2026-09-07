@@ -1,0 +1,42 @@
+{
+  "AMES": [
+    {
+      "step_id": "step_07_write_report",
+      "role_in": "metrics_json",
+      "role_out": "report_md",
+      "input_artifacts": [
+        "runs/reference/tdc_tox_binary/AMES/artifacts/metrics.json",
+        "runs/reference/tdc_tox_binary/AMES/artifacts/split_spec.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_tox_binary/AMES/artifacts/report.md"
+      ],
+      "function": "build_report",
+      "status": "pass",
+      "wall_clock_s": 0.0011,
+      "details": {
+        "warning_count": 0
+      }
+    }
+  ],
+  "DILI": [
+    {
+      "step_id": "step_07_write_report",
+      "role_in": "metrics_json",
+      "role_out": "report_md",
+      "input_artifacts": [
+        "runs/reference/tdc_tox_binary/DILI/artifacts/metrics.json",
+        "runs/reference/tdc_tox_binary/DILI/artifacts/split_spec.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_tox_binary/DILI/artifacts/report.md"
+      ],
+      "function": "build_report",
+      "status": "pass",
+      "wall_clock_s": 0.001212,
+      "details": {
+        "warning_count": 0
+      }
+    }
+  ]
+}

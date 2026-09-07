@@ -1,0 +1,10 @@
+family_id: openml_tabular_binary
+split_id: openml_tabular_binary__heldout__adult
+skill_id: skill_03_model_bundle_to_metrics_json
+support_tasks:
+- credit-g
+- bank-marketing
+expected_validator_role: metrics_json
+reference_runs:
+- runs/reference/openml_tabular_binary/credit-g
+- runs/reference/openml_tabular_binary/bank-marketing

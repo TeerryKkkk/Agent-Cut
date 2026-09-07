@@ -1,0 +1,292 @@
+{
+  "pancreas_ref_batch_0__query_batch_1": [
+    {
+      "step_id": "step_02_prepare_query",
+      "role_in": "reference_query_raw",
+      "role_out": "prepared_query",
+      "input_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_1/artifacts/reference_query_raw/reference_raw.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_1/artifacts/reference_query_raw/query_raw.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_1/artifacts/reference_query_raw/task_manifest.json",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_1/artifacts/reference_query_raw/metadata.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_1/artifacts/prepared_query/reference_prepared.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_1/artifacts/prepared_query/query_prepared.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_1/artifacts/prepared_query/summary.json"
+      ],
+      "function": "build_prepared_query",
+      "status": "pass",
+      "wall_clock_s": 0.646522,
+      "details": {
+        "family_id": "scanpy_pancreas_ingest",
+        "task_name": "pancreas_ref_batch_0__query_batch_1",
+        "gene_count": 2448,
+        "reference_n_cells": 8549,
+        "query_n_cells": 2122,
+        "query_empty_after_alignment": false
+      }
+    },
+    {
+      "step_id": "step_03_build_latent_or_graph",
+      "role_in": "prepared_query",
+      "role_out": "latent_or_graph",
+      "input_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_1/artifacts/prepared_query/reference_prepared.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_1/artifacts/prepared_query/query_prepared.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_1/artifacts/prepared_query/summary.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_1/artifacts/latent_or_graph/reference_graph.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_1/artifacts/latent_or_graph/query_ingested.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_1/artifacts/latent_or_graph/summary.json"
+      ],
+      "function": "build_latent_or_graph",
+      "status": "pass",
+      "wall_clock_s": 31.097713,
+      "details": {
+        "family_id": "scanpy_pancreas_ingest",
+        "task_name": "pancreas_ref_batch_0__query_batch_1",
+        "seed": 0,
+        "reference_has_pca": true,
+        "reference_has_umap": true,
+        "reference_has_neighbors": true,
+        "query_has_pca": true,
+        "query_has_umap": true,
+        "query_prediction_count": 2122
+      }
+    }
+  ],
+  "pancreas_ref_batch_0__query_batch_2": [
+    {
+      "step_id": "step_02_prepare_query",
+      "role_in": "reference_query_raw",
+      "role_out": "prepared_query",
+      "input_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_2/artifacts/reference_query_raw/reference_raw.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_2/artifacts/reference_query_raw/query_raw.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_2/artifacts/reference_query_raw/task_manifest.json",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_2/artifacts/reference_query_raw/metadata.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_2/artifacts/prepared_query/reference_prepared.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_2/artifacts/prepared_query/query_prepared.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_2/artifacts/prepared_query/summary.json"
+      ],
+      "function": "build_prepared_query",
+      "status": "pass",
+      "wall_clock_s": 0.74018,
+      "details": {
+        "family_id": "scanpy_pancreas_ingest",
+        "task_name": "pancreas_ref_batch_0__query_batch_2",
+        "gene_count": 2448,
+        "reference_n_cells": 8549,
+        "query_n_cells": 3356,
+        "query_empty_after_alignment": false
+      }
+    },
+    {
+      "step_id": "step_03_build_latent_or_graph",
+      "role_in": "prepared_query",
+      "role_out": "latent_or_graph",
+      "input_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_2/artifacts/prepared_query/reference_prepared.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_2/artifacts/prepared_query/query_prepared.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_2/artifacts/prepared_query/summary.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_2/artifacts/latent_or_graph/reference_graph.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_2/artifacts/latent_or_graph/query_ingested.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_2/artifacts/latent_or_graph/summary.json"
+      ],
+      "function": "build_latent_or_graph",
+      "status": "pass",
+      "wall_clock_s": 9.921768,
+      "details": {
+        "family_id": "scanpy_pancreas_ingest",
+        "task_name": "pancreas_ref_batch_0__query_batch_2",
+        "seed": 0,
+        "reference_has_pca": true,
+        "reference_has_umap": true,
+        "reference_has_neighbors": true,
+        "query_has_pca": true,
+        "query_has_umap": true,
+        "query_prediction_count": 3356
+      }
+    }
+  ],
+  "pancreas_ref_batch_0__query_batch_3": [
+    {
+      "step_id": "step_02_prepare_query",
+      "role_in": "reference_query_raw",
+      "role_out": "prepared_query",
+      "input_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_3/artifacts/reference_query_raw/reference_raw.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_3/artifacts/reference_query_raw/query_raw.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_3/artifacts/reference_query_raw/task_manifest.json",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_3/artifacts/reference_query_raw/metadata.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_3/artifacts/prepared_query/reference_prepared.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_3/artifacts/prepared_query/query_prepared.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_3/artifacts/prepared_query/summary.json"
+      ],
+      "function": "build_prepared_query",
+      "status": "pass",
+      "wall_clock_s": 0.727617,
+      "details": {
+        "family_id": "scanpy_pancreas_ingest",
+        "task_name": "pancreas_ref_batch_0__query_batch_3",
+        "gene_count": 2448,
+        "reference_n_cells": 8549,
+        "query_n_cells": 635,
+        "query_empty_after_alignment": false
+      }
+    },
+    {
+      "step_id": "step_03_build_latent_or_graph",
+      "role_in": "prepared_query",
+      "role_out": "latent_or_graph",
+      "input_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_3/artifacts/prepared_query/reference_prepared.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_3/artifacts/prepared_query/query_prepared.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_3/artifacts/prepared_query/summary.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_3/artifacts/latent_or_graph/reference_graph.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_3/artifacts/latent_or_graph/query_ingested.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_3/artifacts/latent_or_graph/summary.json"
+      ],
+      "function": "build_latent_or_graph",
+      "status": "pass",
+      "wall_clock_s": 9.420306,
+      "details": {
+        "family_id": "scanpy_pancreas_ingest",
+        "task_name": "pancreas_ref_batch_0__query_batch_3",
+        "seed": 0,
+        "reference_has_pca": true,
+        "reference_has_umap": true,
+        "reference_has_neighbors": true,
+        "query_has_pca": true,
+        "query_has_umap": true,
+        "query_prediction_count": 635
+      }
+    }
+  ],
+  "pancreas_ref_batch_2__query_batch_0": [
+    {
+      "step_id": "step_02_prepare_query",
+      "role_in": "reference_query_raw",
+      "role_out": "prepared_query",
+      "input_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_0/artifacts/reference_query_raw/reference_raw.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_0/artifacts/reference_query_raw/query_raw.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_0/artifacts/reference_query_raw/task_manifest.json",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_0/artifacts/reference_query_raw/metadata.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_0/artifacts/prepared_query/reference_prepared.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_0/artifacts/prepared_query/query_prepared.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_0/artifacts/prepared_query/summary.json"
+      ],
+      "function": "build_prepared_query",
+      "status": "pass",
+      "wall_clock_s": 0.780479,
+      "details": {
+        "family_id": "scanpy_pancreas_ingest",
+        "task_name": "pancreas_ref_batch_2__query_batch_0",
+        "gene_count": 2448,
+        "reference_n_cells": 3356,
+        "query_n_cells": 8549,
+        "query_empty_after_alignment": false
+      }
+    },
+    {
+      "step_id": "step_03_build_latent_or_graph",
+      "role_in": "prepared_query",
+      "role_out": "latent_or_graph",
+      "input_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_0/artifacts/prepared_query/reference_prepared.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_0/artifacts/prepared_query/query_prepared.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_0/artifacts/prepared_query/summary.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_0/artifacts/latent_or_graph/reference_graph.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_0/artifacts/latent_or_graph/query_ingested.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_0/artifacts/latent_or_graph/summary.json"
+      ],
+      "function": "build_latent_or_graph",
+      "status": "pass",
+      "wall_clock_s": 32.595696,
+      "details": {
+        "family_id": "scanpy_pancreas_ingest",
+        "task_name": "pancreas_ref_batch_2__query_batch_0",
+        "seed": 0,
+        "reference_has_pca": true,
+        "reference_has_umap": true,
+        "reference_has_neighbors": true,
+        "query_has_pca": true,
+        "query_has_umap": true,
+        "query_prediction_count": 8549
+      }
+    }
+  ],
+  "pancreas_ref_batch_2__query_batch_3": [
+    {
+      "step_id": "step_02_prepare_query",
+      "role_in": "reference_query_raw",
+      "role_out": "prepared_query",
+      "input_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_3/artifacts/reference_query_raw/reference_raw.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_3/artifacts/reference_query_raw/query_raw.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_3/artifacts/reference_query_raw/task_manifest.json",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_3/artifacts/reference_query_raw/metadata.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_3/artifacts/prepared_query/reference_prepared.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_3/artifacts/prepared_query/query_prepared.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_3/artifacts/prepared_query/summary.json"
+      ],
+      "function": "build_prepared_query",
+      "status": "pass",
+      "wall_clock_s": 0.544157,
+      "details": {
+        "family_id": "scanpy_pancreas_ingest",
+        "task_name": "pancreas_ref_batch_2__query_batch_3",
+        "gene_count": 2448,
+        "reference_n_cells": 3356,
+        "query_n_cells": 635,
+        "query_empty_after_alignment": false
+      }
+    },
+    {
+      "step_id": "step_03_build_latent_or_graph",
+      "role_in": "prepared_query",
+      "role_out": "latent_or_graph",
+      "input_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_3/artifacts/prepared_query/reference_prepared.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_3/artifacts/prepared_query/query_prepared.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_3/artifacts/prepared_query/summary.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_3/artifacts/latent_or_graph/reference_graph.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_3/artifacts/latent_or_graph/query_ingested.h5ad",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_3/artifacts/latent_or_graph/summary.json"
+      ],
+      "function": "build_latent_or_graph",
+      "status": "pass",
+      "wall_clock_s": 6.411783,
+      "details": {
+        "family_id": "scanpy_pancreas_ingest",
+        "task_name": "pancreas_ref_batch_2__query_batch_3",
+        "seed": 0,
+        "reference_has_pca": true,
+        "reference_has_umap": true,
+        "reference_has_neighbors": true,
+        "query_has_pca": true,
+        "query_has_umap": true,
+        "query_prediction_count": 635
+      }
+    }
+  ]
+}

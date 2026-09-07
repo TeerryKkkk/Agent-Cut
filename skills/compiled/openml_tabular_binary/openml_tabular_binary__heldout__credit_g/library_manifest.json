@@ -1,0 +1,36 @@
+{
+  "family_id": "openml_tabular_binary",
+  "split_id": "openml_tabular_binary__heldout__credit_g",
+  "selected_partition_id": "partition_025",
+  "heldout_task": "credit-g",
+  "support_tasks": [
+    "adult",
+    "bank-marketing"
+  ],
+  "skills": [
+    {
+      "skill_id": "skill_01_raw_data_to_preprocess_bundle",
+      "role_start": "raw_data",
+      "role_end": "preprocess_bundle",
+      "skill_dir": "skills/compiled/openml_tabular_binary/openml_tabular_binary__heldout__credit_g/skill_01_raw_data_to_preprocess_bundle"
+    },
+    {
+      "skill_id": "skill_02_preprocess_bundle_to_model_bundle",
+      "role_start": "preprocess_bundle",
+      "role_end": "model_bundle",
+      "skill_dir": "skills/compiled/openml_tabular_binary/openml_tabular_binary__heldout__credit_g/skill_02_preprocess_bundle_to_model_bundle"
+    },
+    {
+      "skill_id": "skill_03_model_bundle_to_metrics_json",
+      "role_start": "model_bundle",
+      "role_end": "metrics_json",
+      "skill_dir": "skills/compiled/openml_tabular_binary/openml_tabular_binary__heldout__credit_g/skill_03_model_bundle_to_metrics_json"
+    },
+    {
+      "skill_id": "skill_04_metrics_json_to_report_md",
+      "role_start": "metrics_json",
+      "role_end": "report_md",
+      "skill_dir": "skills/compiled/openml_tabular_binary/openml_tabular_binary__heldout__credit_g/skill_04_metrics_json_to_report_md"
+    }
+  ]
+}

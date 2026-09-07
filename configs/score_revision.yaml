@@ -1,0 +1,72 @@
+stress_weights:
+  stress_preprocess_bundle_relocation: 0.5
+  stress_model_bundle_relocation: 0.5
+
+selection_policy:
+  primary_metric: mean_spearman
+  secondary_metric: mean_top1_regret
+  tertiary_metric: mean_top3_hit
+  quaternary_metric: mean_kendall_tau
+
+variants:
+  V0:
+    label: current_baseline_objective
+    description: Frozen phase-1 baseline objective.
+    formula: mean_segment_score + boundary_bonus - overfragmentation_penalty
+    family_normalize: false
+    weights:
+      mean_segment_score: 1.0
+      boundary_bonus: 1.0
+      overfragmentation_penalty: -1.0
+  V1:
+    label: reduced_overfragmentation_penalty
+    description: Halve the baseline over-fragmentation penalty to test whether the current penalty is too strong.
+    formula: mean_segment_score + boundary_bonus - 0.5 * overfragmentation_penalty
+    family_normalize: false
+    weights:
+      mean_segment_score: 1.0
+      boundary_bonus: 1.0
+      overfragmentation_penalty: -0.5
+  V2:
+    label: portability_isolation_reward
+    description: Add an explicit reward for isolating the fixed light portability-stress roles into shorter repair spans.
+    formula: mean_segment_score + boundary_bonus - overfragmentation_penalty + 0.20 * portability_reward
+    family_normalize: false
+    weights:
+      mean_segment_score: 1.0
+      boundary_bonus: 1.0
+      overfragmentation_penalty: -1.0
+      portability_reward: 0.2
+  V3:
+    label: validator_local_containment_reward
+    description: Add an explicit reward for finer validator-backed local containment across validator-bearing roles.
+    formula: mean_segment_score + boundary_bonus - overfragmentation_penalty + 0.15 * validator_containment_reward
+    family_normalize: false
+    weights:
+      mean_segment_score: 1.0
+      boundary_bonus: 1.0
+      overfragmentation_penalty: -1.0
+      validator_containment_reward: 0.15
+  V4:
+    label: hybrid_revised_objective
+    description: Combine the reduced penalty with portability-isolation and validator-localization rewards.
+    formula: mean_segment_score + boundary_bonus - 0.5 * overfragmentation_penalty + 0.20 * portability_reward + 0.15 * validator_containment_reward
+    family_normalize: false
+    weights:
+      mean_segment_score: 1.0
+      boundary_bonus: 1.0
+      overfragmentation_penalty: -0.5
+      portability_reward: 0.2
+      validator_containment_reward: 0.15
+  V5:
+    label: family_normalized_hybrid
+    description: Normalize hybrid components within each family/split candidate set so one feature family does not dominate.
+    formula: 0.45 * mean_segment_score + 0.10 * boundary_bonus - 0.20 * overfragmentation_penalty + 0.20 * portability_reward + 0.15 * validator_containment_reward + 0.10 * compactness_reward
+    family_normalize: true
+    weights:
+      mean_segment_score: 0.45
+      boundary_bonus: 0.1
+      overfragmentation_penalty: -0.2
+      portability_reward: 0.2
+      validator_containment_reward: 0.15
+      compactness_reward: 0.1

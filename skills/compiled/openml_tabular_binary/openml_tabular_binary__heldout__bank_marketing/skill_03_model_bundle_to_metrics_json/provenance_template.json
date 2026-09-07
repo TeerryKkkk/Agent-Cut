@@ -1,0 +1,9 @@
+{
+  "family_id": "openml_tabular_binary",
+  "split_id": "openml_tabular_binary__heldout__bank_marketing",
+  "skill_id": "skill_03_model_bundle_to_metrics_json",
+  "task_name": "{{task_name}}",
+  "run_namespace": "support_replay",
+  "start_role": "model_bundle",
+  "end_role": "metrics_json"
+}

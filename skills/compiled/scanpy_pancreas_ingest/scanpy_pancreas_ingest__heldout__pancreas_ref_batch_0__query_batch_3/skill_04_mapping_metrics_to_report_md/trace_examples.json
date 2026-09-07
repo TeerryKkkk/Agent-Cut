@@ -1,0 +1,107 @@
+{
+  "pancreas_ref_batch_0__query_batch_1": [
+    {
+      "step_id": "step_06_write_report",
+      "role_in": "mapping_metrics",
+      "role_out": "report_md",
+      "input_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_1/artifacts/mapping_metrics/metrics.json",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_1/artifacts/mapping_metrics/confusion/confusion_matrix.csv",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_1/artifacts/mapping_metrics/confusion/confusion_matrix.png"
+      ],
+      "output_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_1/artifacts/report.md"
+      ],
+      "function": "build_report",
+      "status": "pass",
+      "wall_clock_s": 0.001747,
+      "details": {
+        "seed": 0
+      }
+    }
+  ],
+  "pancreas_ref_batch_0__query_batch_2": [
+    {
+      "step_id": "step_06_write_report",
+      "role_in": "mapping_metrics",
+      "role_out": "report_md",
+      "input_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_2/artifacts/mapping_metrics/metrics.json",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_2/artifacts/mapping_metrics/confusion/confusion_matrix.csv",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_2/artifacts/mapping_metrics/confusion/confusion_matrix.png"
+      ],
+      "output_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_2/artifacts/report.md"
+      ],
+      "function": "build_report",
+      "status": "pass",
+      "wall_clock_s": 0.000915,
+      "details": {
+        "seed": 0
+      }
+    }
+  ],
+  "pancreas_ref_batch_2__query_batch_0": [
+    {
+      "step_id": "step_06_write_report",
+      "role_in": "mapping_metrics",
+      "role_out": "report_md",
+      "input_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_0/artifacts/mapping_metrics/metrics.json",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_0/artifacts/mapping_metrics/confusion/confusion_matrix.csv",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_0/artifacts/mapping_metrics/confusion/confusion_matrix.png"
+      ],
+      "output_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_0/artifacts/report.md"
+      ],
+      "function": "build_report",
+      "status": "pass",
+      "wall_clock_s": 0.00076,
+      "details": {
+        "seed": 0
+      }
+    }
+  ],
+  "pancreas_ref_batch_2__query_batch_1": [
+    {
+      "step_id": "step_06_write_report",
+      "role_in": "mapping_metrics",
+      "role_out": "report_md",
+      "input_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_1/artifacts/mapping_metrics/metrics.json",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_1/artifacts/mapping_metrics/confusion/confusion_matrix.csv",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_1/artifacts/mapping_metrics/confusion/confusion_matrix.png"
+      ],
+      "output_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_1/artifacts/report.md"
+      ],
+      "function": "build_report",
+      "status": "pass",
+      "wall_clock_s": 0.000786,
+      "details": {
+        "seed": 0
+      }
+    }
+  ],
+  "pancreas_ref_batch_2__query_batch_3": [
+    {
+      "step_id": "step_06_write_report",
+      "role_in": "mapping_metrics",
+      "role_out": "report_md",
+      "input_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_3/artifacts/mapping_metrics/metrics.json",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_3/artifacts/mapping_metrics/confusion/confusion_matrix.csv",
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_3/artifacts/mapping_metrics/confusion/confusion_matrix.png"
+      ],
+      "output_artifacts": [
+        "runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_3/artifacts/report.md"
+      ],
+      "function": "build_report",
+      "status": "pass",
+      "wall_clock_s": 0.000695,
+      "details": {
+        "seed": 0
+      }
+    }
+  ]
+}

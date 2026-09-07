@@ -1,0 +1,203 @@
+{
+  "HIA_Hou": [
+    {
+      "step_id": "step_02_profile_dataset",
+      "role_in": "raw_data",
+      "role_out": "profile_json",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/profile.json"
+      ],
+      "function": "build_profile",
+      "status": "pass",
+      "wall_clock_s": 0.003102,
+      "details": {
+        "valid_smiles_count": 578
+      }
+    },
+    {
+      "step_id": "step_03_define_split",
+      "role_in": "profile_json",
+      "role_out": "split_spec_json",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/profile.json",
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/split_spec.json"
+      ],
+      "function": "build_split_spec",
+      "status": "pass",
+      "wall_clock_s": 0.001239,
+      "details": {
+        "train_size": 403,
+        "valid_size": 58,
+        "test_size": 117
+      }
+    },
+    {
+      "step_id": "step_04_fit_preprocess",
+      "role_in": "split_spec_json",
+      "role_out": "preprocess_bundle",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/split_spec.json",
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/preprocess_bundle/preprocessor.joblib",
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/preprocess_bundle/train_matrix.npy",
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/preprocess_bundle/valid_matrix.npy",
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/preprocess_bundle/test_matrix.npy",
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/preprocess_bundle/train_labels.npy",
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/preprocess_bundle/valid_labels.npy",
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/preprocess_bundle/test_labels.npy",
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/preprocess_bundle/manifest.json"
+      ],
+      "function": "build_preprocess_bundle",
+      "status": "pass",
+      "wall_clock_s": 0.028239,
+      "details": {
+        "transformed_feature_count": 2048
+      }
+    }
+  ],
+  "Pgp_Broccatelli": [
+    {
+      "step_id": "step_02_profile_dataset",
+      "role_in": "raw_data",
+      "role_out": "profile_json",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/profile.json"
+      ],
+      "function": "build_profile",
+      "status": "pass",
+      "wall_clock_s": 0.003739,
+      "details": {
+        "valid_smiles_count": 1218
+      }
+    },
+    {
+      "step_id": "step_03_define_split",
+      "role_in": "profile_json",
+      "role_out": "split_spec_json",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/profile.json",
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/split_spec.json"
+      ],
+      "function": "build_split_spec",
+      "status": "pass",
+      "wall_clock_s": 0.0015,
+      "details": {
+        "train_size": 851,
+        "valid_size": 122,
+        "test_size": 245
+      }
+    },
+    {
+      "step_id": "step_04_fit_preprocess",
+      "role_in": "split_spec_json",
+      "role_out": "preprocess_bundle",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/split_spec.json",
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/preprocess_bundle/preprocessor.joblib",
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/preprocess_bundle/train_matrix.npy",
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/preprocess_bundle/valid_matrix.npy",
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/preprocess_bundle/test_matrix.npy",
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/preprocess_bundle/train_labels.npy",
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/preprocess_bundle/valid_labels.npy",
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/preprocess_bundle/test_labels.npy",
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/preprocess_bundle/manifest.json"
+      ],
+      "function": "build_preprocess_bundle",
+      "status": "pass",
+      "wall_clock_s": 0.047452,
+      "details": {
+        "transformed_feature_count": 2048
+      }
+    }
+  ],
+  "BBB_Martins": [
+    {
+      "step_id": "step_02_profile_dataset",
+      "role_in": "raw_data",
+      "role_out": "profile_json",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_binary/BBB_Martins/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/tdc_admet_binary/BBB_Martins/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_binary/BBB_Martins/artifacts/profile.json"
+      ],
+      "function": "build_profile",
+      "status": "pass",
+      "wall_clock_s": 0.006805,
+      "details": {
+        "valid_smiles_count": 2030
+      }
+    },
+    {
+      "step_id": "step_03_define_split",
+      "role_in": "profile_json",
+      "role_out": "split_spec_json",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_binary/BBB_Martins/artifacts/profile.json",
+        "runs/reference/tdc_admet_binary/BBB_Martins/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/tdc_admet_binary/BBB_Martins/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_binary/BBB_Martins/artifacts/split_spec.json"
+      ],
+      "function": "build_split_spec",
+      "status": "pass",
+      "wall_clock_s": 0.003135,
+      "details": {
+        "train_size": 1421,
+        "valid_size": 203,
+        "test_size": 406
+      }
+    },
+    {
+      "step_id": "step_04_fit_preprocess",
+      "role_in": "split_spec_json",
+      "role_out": "preprocess_bundle",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_binary/BBB_Martins/artifacts/split_spec.json",
+        "runs/reference/tdc_admet_binary/BBB_Martins/artifacts/raw_data/raw_data.parquet",
+        "runs/reference/tdc_admet_binary/BBB_Martins/artifacts/raw_data/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_binary/BBB_Martins/artifacts/preprocess_bundle/preprocessor.joblib",
+        "runs/reference/tdc_admet_binary/BBB_Martins/artifacts/preprocess_bundle/train_matrix.npy",
+        "runs/reference/tdc_admet_binary/BBB_Martins/artifacts/preprocess_bundle/valid_matrix.npy",
+        "runs/reference/tdc_admet_binary/BBB_Martins/artifacts/preprocess_bundle/test_matrix.npy",
+        "runs/reference/tdc_admet_binary/BBB_Martins/artifacts/preprocess_bundle/train_labels.npy",
+        "runs/reference/tdc_admet_binary/BBB_Martins/artifacts/preprocess_bundle/valid_labels.npy",
+        "runs/reference/tdc_admet_binary/BBB_Martins/artifacts/preprocess_bundle/test_labels.npy",
+        "runs/reference/tdc_admet_binary/BBB_Martins/artifacts/preprocess_bundle/manifest.json"
+      ],
+      "function": "build_preprocess_bundle",
+      "status": "pass",
+      "wall_clock_s": 0.127315,
+      "details": {
+        "transformed_feature_count": 2048
+      }
+    }
+  ]
+}

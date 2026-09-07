@@ -1,0 +1,40 @@
+family_id: scanpy_pancreas_ingest
+split_id: scanpy_pancreas_ingest__heldout__pancreas_ref_batch_0__query_batch_2
+skill_id: skill_01_reference_query_raw_to_latent_or_graph
+name: skill-01-reference-query-raw-to-latent-or-graph
+description: Compiled predictive skill for reference_query_raw to latent_or_graph.
+selected_partition_id: partition_009
+role_start: reference_query_raw
+role_end: latent_or_graph
+role_sequence:
+- reference_query_raw
+- prepared_query
+- latent_or_graph
+step_specs:
+- step_id: step_02_prepare_query
+  role_in: reference_query_raw
+  role_out: prepared_query
+  function_name: build_prepared_query
+- step_id: step_03_build_latent_or_graph
+  role_in: prepared_query
+  role_out: latent_or_graph
+  function_name: build_latent_or_graph
+validator_role: latent_or_graph
+support_tasks:
+- pancreas_ref_batch_0__query_batch_1
+- pancreas_ref_batch_0__query_batch_3
+- pancreas_ref_batch_2__query_batch_0
+- pancreas_ref_batch_2__query_batch_1
+- pancreas_ref_batch_2__query_batch_3
+heldout_task: pancreas_ref_batch_0__query_batch_2
+input_contract:
+  primary_input_role: reference_query_raw
+  artifacts_are_explicit: true
+  portable_paths_only: true
+output_contract:
+  output_role: latent_or_graph
+  validator_required: true
+  scientifically_meaningful_artifact: true
+replay_entrypoint:
+  module: runtime.support_replay
+  callable: replay_skill_on_task

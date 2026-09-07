@@ -1,0 +1,13 @@
+{
+  "family_id": "scanpy_pancreas_ingest",
+  "role_template": [
+    "reference_query_raw",
+    "prepared_query",
+    "latent_or_graph",
+    "predicted_labels",
+    "mapping_metrics",
+    "report_md"
+  ],
+  "legal_segment_count": 15,
+  "legal_partition_count": 16
+}

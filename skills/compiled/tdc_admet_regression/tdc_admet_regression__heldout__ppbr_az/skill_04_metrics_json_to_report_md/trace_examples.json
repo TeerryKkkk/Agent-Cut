@@ -1,0 +1,82 @@
+{
+  "Caco2_Wang": [
+    {
+      "step_id": "step_07_write_report",
+      "role_in": "metrics_json",
+      "role_out": "report_md",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/metrics.json",
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/split_spec.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_regression/Caco2_Wang/artifacts/report.md"
+      ],
+      "function": "build_report",
+      "status": "pass",
+      "wall_clock_s": 0.001049,
+      "details": {
+        "warning_count": 0
+      }
+    }
+  ],
+  "Lipophilicity_AstraZeneca": [
+    {
+      "step_id": "step_07_write_report",
+      "role_in": "metrics_json",
+      "role_out": "report_md",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/metrics.json",
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/split_spec.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_regression/Lipophilicity_AstraZeneca/artifacts/report.md"
+      ],
+      "function": "build_report",
+      "status": "pass",
+      "wall_clock_s": 0.001116,
+      "details": {
+        "warning_count": 0
+      }
+    }
+  ],
+  "VDss_Lombardo": [
+    {
+      "step_id": "step_07_write_report",
+      "role_in": "metrics_json",
+      "role_out": "report_md",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_regression/VDss_Lombardo/artifacts/metrics.json",
+        "runs/reference/tdc_admet_regression/VDss_Lombardo/artifacts/split_spec.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_regression/VDss_Lombardo/artifacts/report.md"
+      ],
+      "function": "build_report",
+      "status": "pass",
+      "wall_clock_s": 0.001267,
+      "details": {
+        "warning_count": 1
+      }
+    }
+  ],
+  "Half_Life_Obach": [
+    {
+      "step_id": "step_07_write_report",
+      "role_in": "metrics_json",
+      "role_out": "report_md",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_regression/Half_Life_Obach/artifacts/metrics.json",
+        "runs/reference/tdc_admet_regression/Half_Life_Obach/artifacts/split_spec.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_regression/Half_Life_Obach/artifacts/report.md"
+      ],
+      "function": "build_report",
+      "status": "pass",
+      "wall_clock_s": 0.001246,
+      "details": {
+        "warning_count": 1
+      }
+    }
+  ]
+}

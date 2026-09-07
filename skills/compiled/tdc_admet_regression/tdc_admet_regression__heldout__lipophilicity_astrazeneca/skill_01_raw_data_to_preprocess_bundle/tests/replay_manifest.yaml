@@ -1,0 +1,14 @@
+family_id: tdc_admet_regression
+split_id: tdc_admet_regression__heldout__lipophilicity_astrazeneca
+skill_id: skill_01_raw_data_to_preprocess_bundle
+support_tasks:
+- Caco2_Wang
+- PPBR_AZ
+- VDss_Lombardo
+- Half_Life_Obach
+expected_validator_role: preprocess_bundle
+reference_runs:
+- runs/reference/tdc_admet_regression/Caco2_Wang
+- runs/reference/tdc_admet_regression/PPBR_AZ
+- runs/reference/tdc_admet_regression/VDss_Lombardo
+- runs/reference/tdc_admet_regression/Half_Life_Obach

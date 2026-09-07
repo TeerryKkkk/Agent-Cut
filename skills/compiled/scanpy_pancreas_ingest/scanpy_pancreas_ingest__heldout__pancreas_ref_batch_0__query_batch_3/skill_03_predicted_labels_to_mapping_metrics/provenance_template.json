@@ -1,0 +1,9 @@
+{
+  "family_id": "scanpy_pancreas_ingest",
+  "split_id": "scanpy_pancreas_ingest__heldout__pancreas_ref_batch_0__query_batch_3",
+  "skill_id": "skill_03_predicted_labels_to_mapping_metrics",
+  "task_name": "{{task_name}}",
+  "run_namespace": "support_replay",
+  "start_role": "predicted_labels",
+  "end_role": "mapping_metrics"
+}

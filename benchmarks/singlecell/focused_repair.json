@@ -1,0 +1,32 @@
+{
+  "pooled_comparison": [
+    {
+      "method_label": "selected_baseline",
+      "mean_final_success": 1.0,
+      "mean_rerun_span": 5.0,
+      "mean_extra_wall_clock": 9.51516198
+    },
+    {
+      "method_label": "selected_prepared_query_anchor",
+      "mean_final_success": 1.0,
+      "mean_rerun_span": 4.0,
+      "mean_extra_wall_clock": 7.65851578
+    }
+  ],
+  "delta_summary": [
+    {
+      "comparison_label": "selected_anchor_minus_selected_baseline",
+      "mean_delta_rerun_span": -1.0,
+      "mean_delta_extra_wall_clock": -1.8566462
+    },
+    {
+      "comparison_label": "selected_anchor_minus_micro_baseline",
+      "mean_delta_rerun_span": 0.0,
+      "mean_delta_extra_wall_clock": 0.0
+    }
+  ],
+  "gap_assessment": {
+    "language_call": "focused_gap_closed_exactly_on_anchor_sensitive_slice"
+  },
+  "restoration_basis": "Draft-aligned focused-slice summary."
+}

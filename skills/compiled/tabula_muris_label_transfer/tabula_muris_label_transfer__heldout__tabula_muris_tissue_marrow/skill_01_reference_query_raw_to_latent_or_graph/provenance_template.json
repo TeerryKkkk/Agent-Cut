@@ -1,0 +1,9 @@
+{
+  "family_id": "tabula_muris_label_transfer",
+  "split_id": "tabula_muris_label_transfer__heldout__tabula_muris_tissue_marrow",
+  "skill_id": "skill_01_reference_query_raw_to_latent_or_graph",
+  "task_name": "{{task_name}}",
+  "run_namespace": "support_replay",
+  "start_role": "reference_query_raw",
+  "end_role": "latent_or_graph"
+}

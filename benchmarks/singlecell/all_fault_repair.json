@@ -1,0 +1,23 @@
+{
+  "pooled_comparison": [
+    {
+      "method_label": "selected_baseline",
+      "mean_final_success": 1.0,
+      "mean_rerun_span": 2.8,
+      "mean_extra_wall_clock": 8.02984502,
+      "anchor_invocation_rate": 0.0
+    },
+    {
+      "method_label": "selected_prepared_query_anchor",
+      "mean_final_success": 1.0,
+      "mean_rerun_span": 2.6,
+      "mean_extra_wall_clock": 7.65851578,
+      "anchor_invocation_rate": 0.2
+    }
+  ],
+  "gap_assessment": {
+    "language_call": "pooled_gap_closed_with_fault_concentration",
+    "improvement_concentration": "latent_or_graph_missing_required_key"
+  },
+  "restoration_basis": "Draft-aligned pooled all-fault summary; prepared_query closes the pooled gap while remaining fault-concentrated."
+}

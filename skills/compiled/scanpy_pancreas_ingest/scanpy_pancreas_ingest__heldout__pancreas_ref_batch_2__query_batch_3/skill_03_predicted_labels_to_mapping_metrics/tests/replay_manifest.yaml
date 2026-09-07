@@ -1,0 +1,16 @@
+family_id: scanpy_pancreas_ingest
+split_id: scanpy_pancreas_ingest__heldout__pancreas_ref_batch_2__query_batch_3
+skill_id: skill_03_predicted_labels_to_mapping_metrics
+support_tasks:
+- pancreas_ref_batch_0__query_batch_1
+- pancreas_ref_batch_0__query_batch_2
+- pancreas_ref_batch_0__query_batch_3
+- pancreas_ref_batch_2__query_batch_0
+- pancreas_ref_batch_2__query_batch_1
+expected_validator_role: mapping_metrics
+reference_runs:
+- runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_1
+- runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_2
+- runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_0__query_batch_3
+- runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_0
+- runs/reference/scanpy_pancreas_ingest/pancreas_ref_batch_2__query_batch_1

@@ -1,0 +1,3 @@
+role: report_md
+module: validators.predictive_roles
+callable: validate_role

@@ -1,0 +1,37 @@
+{
+  "family_id": "tabula_muris_label_transfer",
+  "split_id": "tabula_muris_label_transfer__heldout__tabula_muris_tissue_spleen",
+  "selected_partition_id": "partition_009",
+  "heldout_task": "tabula_muris_tissue_spleen",
+  "support_tasks": [
+    "tabula_muris_tissue_limb_muscle",
+    "tabula_muris_tissue_lung",
+    "tabula_muris_tissue_marrow"
+  ],
+  "skills": [
+    {
+      "skill_id": "skill_01_reference_query_raw_to_latent_or_graph",
+      "role_start": "reference_query_raw",
+      "role_end": "latent_or_graph",
+      "skill_dir": "skills/compiled/tabula_muris_label_transfer/tabula_muris_label_transfer__heldout__tabula_muris_tissue_spleen/skill_01_reference_query_raw_to_latent_or_graph"
+    },
+    {
+      "skill_id": "skill_02_latent_or_graph_to_predicted_labels",
+      "role_start": "latent_or_graph",
+      "role_end": "predicted_labels",
+      "skill_dir": "skills/compiled/tabula_muris_label_transfer/tabula_muris_label_transfer__heldout__tabula_muris_tissue_spleen/skill_02_latent_or_graph_to_predicted_labels"
+    },
+    {
+      "skill_id": "skill_03_predicted_labels_to_mapping_metrics",
+      "role_start": "predicted_labels",
+      "role_end": "mapping_metrics",
+      "skill_dir": "skills/compiled/tabula_muris_label_transfer/tabula_muris_label_transfer__heldout__tabula_muris_tissue_spleen/skill_03_predicted_labels_to_mapping_metrics"
+    },
+    {
+      "skill_id": "skill_04_mapping_metrics_to_report_md",
+      "role_start": "mapping_metrics",
+      "role_end": "report_md",
+      "skill_dir": "skills/compiled/tabula_muris_label_transfer/tabula_muris_label_transfer__heldout__tabula_muris_tissue_spleen/skill_04_mapping_metrics_to_report_md"
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "HIA_Hou": [
+    {
+      "step_id": "step_05_fit_model",
+      "role_in": "preprocess_bundle",
+      "role_out": "model_bundle",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/preprocess_bundle/preprocessor.joblib",
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/preprocess_bundle/train_matrix.npy",
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/preprocess_bundle/valid_matrix.npy",
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/preprocess_bundle/test_matrix.npy",
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/preprocess_bundle/train_labels.npy",
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/preprocess_bundle/valid_labels.npy",
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/preprocess_bundle/test_labels.npy",
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/preprocess_bundle/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/model_bundle/model.joblib",
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/model_bundle/predictions.csv",
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/model_bundle/smoke_input.npy",
+        "runs/reference/tdc_admet_binary/HIA_Hou/artifacts/model_bundle/manifest.json"
+      ],
+      "function": "build_model_bundle",
+      "status": "pass",
+      "wall_clock_s": 0.012367,
+      "details": {
+        "prediction_row_count": 117
+      }
+    }
+  ],
+  "Pgp_Broccatelli": [
+    {
+      "step_id": "step_05_fit_model",
+      "role_in": "preprocess_bundle",
+      "role_out": "model_bundle",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/preprocess_bundle/preprocessor.joblib",
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/preprocess_bundle/train_matrix.npy",
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/preprocess_bundle/valid_matrix.npy",
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/preprocess_bundle/test_matrix.npy",
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/preprocess_bundle/train_labels.npy",
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/preprocess_bundle/valid_labels.npy",
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/preprocess_bundle/test_labels.npy",
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/preprocess_bundle/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/model_bundle/model.joblib",
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/model_bundle/predictions.csv",
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/model_bundle/smoke_input.npy",
+        "runs/reference/tdc_admet_binary/Pgp_Broccatelli/artifacts/model_bundle/manifest.json"
+      ],
+      "function": "build_model_bundle",
+      "status": "pass",
+      "wall_clock_s": 0.026083,
+      "details": {
+        "prediction_row_count": 245
+      }
+    }
+  ],
+  "Bioavailability_Ma": [
+    {
+      "step_id": "step_05_fit_model",
+      "role_in": "preprocess_bundle",
+      "role_out": "model_bundle",
+      "input_artifacts": [
+        "runs/reference/tdc_admet_binary/Bioavailability_Ma/artifacts/preprocess_bundle/preprocessor.joblib",
+        "runs/reference/tdc_admet_binary/Bioavailability_Ma/artifacts/preprocess_bundle/train_matrix.npy",
+        "runs/reference/tdc_admet_binary/Bioavailability_Ma/artifacts/preprocess_bundle/valid_matrix.npy",
+        "runs/reference/tdc_admet_binary/Bioavailability_Ma/artifacts/preprocess_bundle/test_matrix.npy",
+        "runs/reference/tdc_admet_binary/Bioavailability_Ma/artifacts/preprocess_bundle/train_labels.npy",
+        "runs/reference/tdc_admet_binary/Bioavailability_Ma/artifacts/preprocess_bundle/valid_labels.npy",
+        "runs/reference/tdc_admet_binary/Bioavailability_Ma/artifacts/preprocess_bundle/test_labels.npy",
+        "runs/reference/tdc_admet_binary/Bioavailability_Ma/artifacts/preprocess_bundle/manifest.json"
+      ],
+      "output_artifacts": [
+        "runs/reference/tdc_admet_binary/Bioavailability_Ma/artifacts/model_bundle/model.joblib",
+        "runs/reference/tdc_admet_binary/Bioavailability_Ma/artifacts/model_bundle/predictions.csv",
+        "runs/reference/tdc_admet_binary/Bioavailability_Ma/artifacts/model_bundle/smoke_input.npy",
+        "runs/reference/tdc_admet_binary/Bioavailability_Ma/artifacts/model_bundle/manifest.json"
+      ],
+      "function": "build_model_bundle",
+      "status": "pass",
+      "wall_clock_s": 0.028152,
+      "details": {
+        "prediction_row_count": 128
+      }
+    }
+  ]
+}
