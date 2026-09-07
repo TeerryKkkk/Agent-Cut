@@ -10,8 +10,8 @@ selection_policy:
 
 variants:
   V0:
-    label: current_baseline_objective
-    description: Frozen phase-1 baseline objective.
+    label: baseline_objective
+    description: Baseline combining segment scores, boundary utility, and a fragmentation penalty.
     formula: mean_segment_score + boundary_bonus - overfragmentation_penalty
     family_normalize: false
     weights:
@@ -48,7 +48,7 @@ variants:
       overfragmentation_penalty: -1.0
       validator_containment_reward: 0.15
   V4:
-    label: hybrid_revised_objective
+    label: hybrid_objective
     description: Combine the reduced penalty with portability-isolation and validator-localization rewards.
     formula: mean_segment_score + boundary_bonus - 0.5 * overfragmentation_penalty + 0.20 * portability_reward + 0.15 * validator_containment_reward
     family_normalize: false

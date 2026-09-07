@@ -9,6 +9,7 @@ import pandas as pd
 
 from utils.family_registry import load_family_metric_policy
 from utils.io_utils import read_json
+from utils.pathing import detect_project_paths
 
 VALIDATOR_ROLES = [
     "reference_query_raw",
@@ -49,11 +50,10 @@ def _fail(role: str, error_code: str, message: str, details: dict[str, Any] | No
 
 
 def infer_workspace_root(path: Path) -> Path | None:
-    resolved = path.resolve()
-    for candidate in [resolved.parent, *resolved.parents]:
-        if (candidate / "configs").exists() and (candidate / "apikey.txt").exists():
-            return candidate
-    return None
+    try:
+        return detect_project_paths(path).workspace_root
+    except RuntimeError:
+        return None
 
 
 def artifact_paths_for_run(run_dir: Path) -> dict[str, Path]:
@@ -228,6 +228,7 @@ def validate_predicted_labels(artifact_dir: Path, family_id: str, run_dir: Path 
 
 def validate_mapping_metrics(metrics_path: Path, family_id: str, workspace_root: Path | None = None) -> ValidationResult:
     role = "mapping_metrics"
+    workspace_root = workspace_root or infer_workspace_root(metrics_path)
     try:
         payload = read_json(metrics_path)
     except Exception as exc:

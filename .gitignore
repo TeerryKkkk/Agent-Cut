@@ -16,6 +16,13 @@ credentials.*
 *.key
 *.log
 *.tmp
+*.download
+.coverage
+.coverage.*
+htmlcov/
+pytest-of-*/
+# Downloaded datasets, exports, and provider caches.
+/data/
 runs/
 results/
 reports/

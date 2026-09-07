@@ -45,13 +45,13 @@ from utils.pathing import detect_project_paths
 from validators.predictive_roles import validate_role
 
 PHASE3_ROOT_NAME = "score_evaluation"
-PHASE3_AUDIT_REPORT = "phase3_score_audit.md"
-PHASE3_DIAGNOSIS_REPORT = "phase3_objective_diagnosis.md"
-PHASE3_FINAL_REPORT = "score_evaluation_report.md"
+SCORE_AUDIT_REPORT = "score_audit.md"
+OBJECTIVE_DIAGNOSTICS_REPORT = "objective_diagnostics.md"
+SCORE_EVALUATION_REPORT = "score_evaluation_report.md"
 VALIDATOR_FAILURE_ROLES = ["profile_json", "split_spec_json", "preprocess_bundle", "model_bundle", "metrics_json"]
 REVISED_CONDITION = ConditionSpec(
     condition_id="artifact_partition_full_revised",
-    label="Phase-3 artifact_partition_full_revised",
+    label="Selected scoring-variant partition",
     representation_kind="artifact_partition_full_revised",
     controller_runtime="score_evaluation_skill_runtime",
     validator_mode="boundary",
@@ -128,15 +128,15 @@ def _safe_stat(value: float | None) -> float | None:
 
 
 def _variant_order(paths) -> list[str]:
-    return list(load_score_revision_config(paths)["variants"].keys())
+    return list(load_scoring_variants_config(paths)["variants"].keys())
 
 
-def load_score_revision_config(paths) -> dict[str, Any]:
-    return read_yaml(paths.configs_dir / "score_revision.yaml")
+def load_scoring_variants_config(paths) -> dict[str, Any]:
+    return read_yaml(paths.configs_dir / "scoring_variants.yaml")
 
 
 def _stress_weight_map(paths) -> dict[str, float]:
-    return {key: float(value) for key, value in load_score_revision_config(paths)["stress_weights"].items()}
+    return {key: float(value) for key, value in load_scoring_variants_config(paths)["stress_weights"].items()}
 
 
 def _condition_fields() -> list[str]:
@@ -377,7 +377,7 @@ def _normalize_split_feature_frame(frame: pd.DataFrame, feature_names: list[str]
 
 
 def _apply_variant_scores(paths, feature_frame: pd.DataFrame) -> pd.DataFrame:
-    config = load_score_revision_config(paths)
+    config = load_scoring_variants_config(paths)
     variant_definitions = config["variants"]
     required_features = sorted(
         {
@@ -588,16 +588,16 @@ def audit_phase3_score_baseline(paths=None) -> dict[str, Any]:
             "Only the new phase-3 revised selected-partition downstream condition needs fresh held-out execution.",
         ],
         "blockers": blockers,
-        "gate_audit_report": resolved_paths.relative_to_workspace(_report_path(resolved_paths, PHASE3_AUDIT_REPORT)),
+        "gate_audit_report": resolved_paths.relative_to_workspace(_report_path(resolved_paths, SCORE_AUDIT_REPORT)),
     }
     write_json(audit_root(resolved_paths) / "reuse_vs_rerun_summary.json", summary)
-    write_text(_report_path(resolved_paths, PHASE3_AUDIT_REPORT), _build_audit_report(summary))
+    write_text(_report_path(resolved_paths, SCORE_AUDIT_REPORT), _build_audit_report(summary))
     return summary
 
 
 def _build_audit_report(summary: dict[str, Any]) -> str:
     lines = [
-        "# Phase-3 Score Audit",
+        "# Score Audit",
         "",
         "## 1. Gate 0",
         "",
@@ -661,7 +661,7 @@ def diagnose_current_score_objective(paths=None) -> dict[str, Any]:
         return {
             "gate_1_passed": False,
             "blockers": audit_summary["blockers"],
-            "diagnosis_report": resolved_paths.relative_to_workspace(_report_path(resolved_paths, PHASE3_DIAGNOSIS_REPORT)),
+            "diagnosis_report": resolved_paths.relative_to_workspace(_report_path(resolved_paths, OBJECTIVE_DIAGNOSTICS_REPORT)),
         }
 
     feature_frame = _build_partition_feature_frame(resolved_paths)
@@ -789,7 +789,7 @@ def diagnose_current_score_objective(paths=None) -> dict[str, Any]:
     _save_dataframe(contribution_frame, diagnostics_root(resolved_paths) / "score_term_contributions.csv")
     _save_dataframe(grouped_by_boundary, diagnostics_root(resolved_paths) / "boundary_group_statistics.csv")
     _save_dataframe(grouped_by_segments, diagnostics_root(resolved_paths) / "segment_count_group_statistics.csv")
-    _plot_diagnostic_figure(feature_frame, contribution_frame, figures_root(resolved_paths) / "phase3_score_term_diagnostics.png")
+    _plot_diagnostic_figure(feature_frame, contribution_frame, figures_root(resolved_paths) / "score_term_diagnostics.png")
 
     summary = {
         "gate_1_passed": True,
@@ -812,13 +812,13 @@ def diagnose_current_score_objective(paths=None) -> dict[str, Any]:
             diagnostics_root(resolved_paths) / "selected_partition_rank_diagnostics.csv"
         ),
         "diagnostic_figure": resolved_paths.relative_to_workspace(
-            figures_root(resolved_paths) / "phase3_score_term_diagnostics.png"
+            figures_root(resolved_paths) / "score_term_diagnostics.png"
         ),
         "blockers": [],
-        "diagnosis_report": resolved_paths.relative_to_workspace(_report_path(resolved_paths, PHASE3_DIAGNOSIS_REPORT)),
+        "diagnosis_report": resolved_paths.relative_to_workspace(_report_path(resolved_paths, OBJECTIVE_DIAGNOSTICS_REPORT)),
     }
     write_json(diagnostics_root(resolved_paths) / "diagnosis_summary.json", summary)
-    write_text(_report_path(resolved_paths, PHASE3_DIAGNOSIS_REPORT), _build_diagnosis_report(summary, baseline_summary, selected_rank_frame, contribution_frame))
+    write_text(_report_path(resolved_paths, OBJECTIVE_DIAGNOSTICS_REPORT), _build_diagnosis_report(summary, baseline_summary, selected_rank_frame, contribution_frame))
     return summary
 
 
@@ -883,7 +883,7 @@ def _build_diagnosis_report(
     pooled_row = baseline_summary[baseline_summary["family_id"] == "pooled"].iloc[0].to_dict()
     representative_rows = selected_rank_frame.head(8).to_dict(orient="records")
     lines = [
-        "# Phase-3 Objective Diagnosis",
+        "# Objective Diagnostics",
         "",
         "## 1. Gate 1",
         "",
@@ -998,7 +998,7 @@ def run_phase3_objective_variants(paths=None) -> dict[str, Any]:
     summary = {
         "variants_ready": True,
         "variant_ids": _variant_order(resolved_paths),
-        "variant_config": resolved_paths.relative_to_workspace(resolved_paths.configs_dir / "score_revision.yaml"),
+        "variant_config": resolved_paths.relative_to_workspace(resolved_paths.configs_dir / "scoring_variants.yaml"),
         "variant_score_csv": resolved_paths.relative_to_workspace(ranking_root(resolved_paths) / "variant_scores.csv"),
         "selected_partition_csv": resolved_paths.relative_to_workspace(
             manifests_root(resolved_paths) / "selected_partition_per_variant.csv"
@@ -1213,9 +1213,9 @@ def run_phase3_revised_ranking(paths=None) -> dict[str, Any]:
     _save_dataframe(ranking_summary, ranking_root(resolved_paths) / "summary_by_variant.csv")
     _save_dataframe(split_summary, ranking_root(resolved_paths) / "split_summary_by_variant.csv")
     _save_dataframe(selected_partitions, ranking_root(resolved_paths) / "selected_partition_by_variant.csv")
-    _plot_ranking_summary(ranking_summary, figures_root(resolved_paths) / "phase3_ranking_summary.png")
-    _plot_selected_partition_changes(calibration_selection, figures_root(resolved_paths) / "phase3_selected_partition_changes.png")
-    _plot_rank_positions(rank_positions, figures_root(resolved_paths) / "phase3_rank_positions.png")
+    _plot_ranking_summary(ranking_summary, figures_root(resolved_paths) / "score_ranking_summary.png")
+    _plot_selected_partition_changes(calibration_selection, figures_root(resolved_paths) / "score_selected_partition_changes.png")
+    _plot_rank_positions(rank_positions, figures_root(resolved_paths) / "score_rank_positions.png")
 
     baseline_pooled = ranking_summary[(ranking_summary["variant_id"] == "V0") & (ranking_summary["family_id"] == "pooled")].iloc[0]
     selection_variant_counts = calibration_selection["chosen_variant_id"].value_counts().to_dict()
@@ -1228,9 +1228,9 @@ def run_phase3_revised_ranking(paths=None) -> dict[str, Any]:
             ranking_root(resolved_paths) / "selected_partition_by_variant.csv"
         ),
         "figures": [
-            resolved_paths.relative_to_workspace(figures_root(resolved_paths) / "phase3_ranking_summary.png"),
-            resolved_paths.relative_to_workspace(figures_root(resolved_paths) / "phase3_selected_partition_changes.png"),
-            resolved_paths.relative_to_workspace(figures_root(resolved_paths) / "phase3_rank_positions.png"),
+            resolved_paths.relative_to_workspace(figures_root(resolved_paths) / "score_ranking_summary.png"),
+            resolved_paths.relative_to_workspace(figures_root(resolved_paths) / "score_selected_partition_changes.png"),
+            resolved_paths.relative_to_workspace(figures_root(resolved_paths) / "score_rank_positions.png"),
         ],
         "baseline_pooled_summary": {
             "spearman": float(baseline_pooled["spearman"]),
@@ -1649,7 +1649,7 @@ def run_phase3_revised_partition_eval(paths=None) -> dict[str, Any]:
     summary_frame, best_by_family = _revised_partition_summary_rows(combined_frame)
     _save_dataframe(summary_frame, aggregate_root(resolved_paths) / "revised_partition_condition_summary.csv")
     _save_dataframe(best_by_family, aggregate_root(resolved_paths) / "revised_partition_best_by_family.csv")
-    _plot_downstream_comparison(summary_frame, figures_root(resolved_paths) / "phase3_downstream_comparison.png")
+    _plot_downstream_comparison(summary_frame, figures_root(resolved_paths) / "score_downstream_comparison.png")
 
     pooled_stress = summary_frame[
         (summary_frame["family_id"] == "pooled")
@@ -1677,7 +1677,7 @@ def run_phase3_revised_partition_eval(paths=None) -> dict[str, Any]:
         "best_by_family_csv": resolved_paths.relative_to_workspace(
             aggregate_root(resolved_paths) / "revised_partition_best_by_family.csv"
         ),
-        "figure": resolved_paths.relative_to_workspace(figures_root(resolved_paths) / "phase3_downstream_comparison.png"),
+        "figure": resolved_paths.relative_to_workspace(figures_root(resolved_paths) / "score_downstream_comparison.png"),
         "pooled_stress_utility": {
             "artifact_partition_full": float(baseline_stress["utility"]),
             "artifact_partition_full_revised": float(revised_stress["utility"]),
@@ -1688,7 +1688,7 @@ def run_phase3_revised_partition_eval(paths=None) -> dict[str, Any]:
         "blockers": [],
     }
     write_json(revised_partition_eval_root(resolved_paths) / "summary.json", summary)
-    write_text(_report_path(resolved_paths, PHASE3_FINAL_REPORT), _build_final_report(resolved_paths, summary_frame, best_by_family))
+    write_text(_report_path(resolved_paths, SCORE_EVALUATION_REPORT), _build_final_report(resolved_paths, summary_frame, best_by_family))
     return summary
 
 
@@ -1733,7 +1733,7 @@ def _build_final_report(paths, summary_frame: pd.DataFrame, best_by_family: pd.D
         pooled_clean_rows["artifact_partition_full_revised"]["utility"] - pooled_clean_rows["artifact_partition_full"]["utility"]
     )
     lines = [
-        "# Phase-3 Score Revision Report",
+        "# Score Evaluation Report",
         "",
         "## 1. Frozen Baseline And Reuse",
         "",
@@ -1804,7 +1804,7 @@ def _build_final_report(paths, summary_frame: pd.DataFrame, best_by_family: pd.D
         "2. What exactly was wrong with the current objective?",
         "- It over-favored a four-segment early-merged partition and lacked explicit portability-containment and validator-localization rewards.",
         "3. Which revised objective variants were tested?",
-        "- `V0` through `V5` as listed above from `configs/score_revision.yaml`.",
+        "- `V0` through `V5` as listed above from `configs/scoring_variants.yaml`.",
         "4. What calibration/selection protocol was used?",
         "- Leave-one-split-out variant selection on non-target splits only.",
         "5. Did ranking signal improve, and by how much?",

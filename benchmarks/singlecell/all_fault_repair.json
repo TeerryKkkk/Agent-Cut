@@ -15,9 +15,7 @@
       "anchor_invocation_rate": 0.2
     }
   ],
-  "gap_assessment": {
-    "language_call": "pooled_gap_closed_with_fault_concentration",
+  "summary": {
     "improvement_concentration": "latent_or_graph_missing_required_key"
-  },
-  "restoration_basis": "Draft-aligned pooled all-fault summary; prepared_query closes the pooled gap while remaining fault-concentrated."
+  }
 }

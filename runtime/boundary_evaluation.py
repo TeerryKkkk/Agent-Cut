@@ -43,9 +43,9 @@ from utils.pathing import detect_project_paths
 from validators.predictive_roles import validate_role
 
 PHASE3B_ROOT_NAME = "boundary_evaluation"
-PHASE3B_AUDIT_REPORT = "phase3b_audit.md"
-PHASE3B_BOUNDARY_REPORT = "phase3b_boundary_attribution.md"
-PHASE3B_FINAL_REPORT = "boundary_evaluation_report.md"
+BOUNDARY_AUDIT_REPORT = "boundary_score_audit.md"
+BOUNDARY_ATTRIBUTION_REPORT = "boundary_attribution.md"
+BOUNDARY_EVALUATION_REPORT = "boundary_evaluation_report.md"
 
 BOUNDARY_ROLE_TO_ID = {
     "profile_json": "B1",
@@ -62,7 +62,7 @@ LATE_BOUNDARY_IDS = ["B4", "B5"]
 
 V4_CONDITION = ConditionSpec(
     condition_id="artifact_partition_v4",
-    label="Phase-3b artifact_partition_v4",
+    label="V4 hybrid baseline partition",
     representation_kind="artifact_partition_v4",
     controller_runtime="boundary_evaluation_skill_runtime",
     validator_mode="boundary",
@@ -73,7 +73,7 @@ V4_CONDITION = ConditionSpec(
 
 PHASE3B_SELECTED_CONDITION = ConditionSpec(
     condition_id="artifact_partition_phase3b",
-    label="Phase-3b artifact_partition_selected",
+    label="Selected boundary-objective partition",
     representation_kind="artifact_partition_phase3b",
     controller_runtime="boundary_evaluation_skill_runtime",
     validator_mode="boundary",
@@ -128,20 +128,20 @@ def _json_ready(value: Any) -> str:
     return json.dumps(value, ensure_ascii=True, sort_keys=True)
 
 
-def load_score_revision_b_config(paths) -> dict[str, Any]:
-    return read_yaml(paths.configs_dir / "score_revision_b.yaml")
+def load_boundary_objectives_config(paths) -> dict[str, Any]:
+    return read_yaml(paths.configs_dir / "boundary_objectives.yaml")
 
 
 def _interaction_terms(paths) -> list[str]:
-    return list(load_score_revision_b_config(paths)["modeling"]["adjacent_interactions"])
+    return list(load_boundary_objectives_config(paths)["modeling"]["adjacent_interactions"])
 
 
 def _selection_policy(paths) -> dict[str, Any]:
-    return dict(load_score_revision_b_config(paths)["selection_policy"])
+    return dict(load_boundary_objectives_config(paths)["selection_policy"])
 
 
 def _v7_constraint(paths) -> dict[str, Any]:
-    return dict(load_score_revision_b_config(paths)["v7_constraint"])
+    return dict(load_boundary_objectives_config(paths)["v7_constraint"])
 
 
 def _parse_boundary_roles(value: Any) -> list[str]:
@@ -484,7 +484,7 @@ def _direct_marginal_rows(frame: pd.DataFrame, family_scope: str) -> list[dict[s
 
 def _objective_alignment_rows(paths, candidate_frame: pd.DataFrame, stress_model: dict[str, Any]) -> list[dict[str, Any]]:
     interaction_terms = _interaction_terms(paths)
-    modeling_cfg = load_score_revision_b_config(paths)["modeling"]
+    modeling_cfg = load_boundary_objectives_config(paths)["modeling"]
     score_frame = _normalize_within_split(candidate_frame, "score__V4", "score_v4_norm")
     score_model = _fit_ridge_model(
         score_frame,
@@ -807,10 +807,10 @@ def audit_phase3b_baseline(paths=None) -> dict[str, Any]:
         ],
         "partition_status_by_family": family_partition_status,
         "blockers": blockers,
-        "audit_report": resolved_paths.relative_to_workspace(_report_path(resolved_paths, PHASE3B_AUDIT_REPORT)),
+        "audit_report": resolved_paths.relative_to_workspace(_report_path(resolved_paths, BOUNDARY_AUDIT_REPORT)),
     }
     write_json(audit_root(resolved_paths) / "reuse_vs_rerun_summary.json", summary)
-    write_text(_report_path(resolved_paths, PHASE3B_AUDIT_REPORT), _build_phase3b_audit_report(summary))
+    write_text(_report_path(resolved_paths, BOUNDARY_AUDIT_REPORT), _build_phase3b_audit_report(summary))
     return summary
 
 
@@ -824,7 +824,7 @@ def _build_phase3b_audit_report(summary: dict[str, Any]) -> str:
         for artifact_name, payload in summary["phase3_reusable_artifacts"].items()
     ]
     lines = [
-        "# Phase-3b Audit",
+        "# Boundary Score Audit",
         "",
         "## 1. Gate 0",
         "",
@@ -868,10 +868,10 @@ def run_phase3b_boundary_attribution(paths=None) -> dict[str, Any]:
         return {
             "gate_1_passed": False,
             "blockers": audit_summary["blockers"],
-            "boundary_report": resolved_paths.relative_to_workspace(_report_path(resolved_paths, PHASE3B_BOUNDARY_REPORT)),
+            "boundary_report": resolved_paths.relative_to_workspace(_report_path(resolved_paths, BOUNDARY_ATTRIBUTION_REPORT)),
         }
 
-    modeling_cfg = load_score_revision_b_config(resolved_paths)["modeling"]
+    modeling_cfg = load_boundary_objectives_config(resolved_paths)["modeling"]
     interaction_terms = _interaction_terms(resolved_paths)
     candidate_frame = _phase3_candidate_frame(resolved_paths)
     observed_clean = _observed_clean_partition_rows(resolved_paths, candidate_frame)
@@ -1042,12 +1042,12 @@ def run_phase3b_boundary_attribution(paths=None) -> dict[str, Any]:
         "segment_penalty_json": resolved_paths.relative_to_workspace(
             boundary_root(resolved_paths) / "segment_penalty_diagnosis.json"
         ),
-        "boundary_report": resolved_paths.relative_to_workspace(_report_path(resolved_paths, PHASE3B_BOUNDARY_REPORT)),
+        "boundary_report": resolved_paths.relative_to_workspace(_report_path(resolved_paths, BOUNDARY_ATTRIBUTION_REPORT)),
         "blockers": [],
     }
     write_json(boundary_root(resolved_paths) / "summary.json", summary)
     write_text(
-        _report_path(resolved_paths, PHASE3B_BOUNDARY_REPORT),
+        _report_path(resolved_paths, BOUNDARY_ATTRIBUTION_REPORT),
         _build_phase3b_boundary_report(
             candidate_frame,
             marginal_frame,
@@ -1087,7 +1087,7 @@ def _build_phase3b_boundary_report(
         & (coefficient_frame["stage"] == "boundary_attribution")
     ].copy()
     lines = [
-        "# Phase-3b Boundary Attribution",
+        "# Boundary Attribution",
         "",
         "## 1. Candidate-Space Reuse",
         "",
@@ -1176,7 +1176,7 @@ def _fit_variant_bundle(
     target_family_id: str,
     target_split_id: str,
 ) -> dict[str, Any]:
-    modeling_cfg = load_score_revision_b_config(paths)["modeling"]
+    modeling_cfg = load_boundary_objectives_config(paths)["modeling"]
     interaction_terms = _interaction_terms(paths)
     train = training_frame.copy()
     train = _normalize_within_split(train, "score__V4", "score_v4_norm")
@@ -1414,12 +1414,12 @@ def run_phase3b_objective_variants(paths=None) -> dict[str, Any]:
         variant_selected_rows.append(_variant_selected_rows(scored_frame, variant_id))
     selected_frame = pd.concat(variant_selected_rows, ignore_index=True)
     _save_dataframe(selected_frame, manifests_root(resolved_paths) / "selected_partition_by_variant.csv")
-    write_json(manifests_root(resolved_paths) / "objective_variants.json", load_score_revision_b_config(resolved_paths))
+    write_json(manifests_root(resolved_paths) / "objective_variants.json", load_boundary_objectives_config(resolved_paths))
 
     summary = {
         "variants_ready": True,
         "variant_ids": variant_ids,
-        "variant_config": resolved_paths.relative_to_workspace(resolved_paths.configs_dir / "score_revision_b.yaml"),
+        "variant_config": resolved_paths.relative_to_workspace(resolved_paths.configs_dir / "boundary_objectives.yaml"),
         "variant_score_csv": resolved_paths.relative_to_workspace(ranking_root(resolved_paths) / "variant_scores.csv"),
         "coefficient_csv": resolved_paths.relative_to_workspace(
             manifests_root(resolved_paths) / "objective_variant_coefficients.csv"
@@ -1586,7 +1586,7 @@ def run_phase3b_revised_ranking(paths=None) -> dict[str, Any]:
     _save_dataframe(summary_frame, ranking_root(resolved_paths) / "summary_by_variant.csv")
     _save_dataframe(split_summary_frame, ranking_root(resolved_paths) / "split_summary_by_variant.csv")
     _save_dataframe(selected_frame, ranking_root(resolved_paths) / "selected_partition_by_variant.csv")
-    _plot_phase3b_ranking_summary(summary_frame, figures_root(resolved_paths) / "phase3b_ranking_summary.png")
+    _plot_phase3b_ranking_summary(summary_frame, figures_root(resolved_paths) / "boundary_ranking_summary.png")
 
     summary = {
         "ranking_ready": True,
@@ -1598,7 +1598,7 @@ def run_phase3b_revised_ranking(paths=None) -> dict[str, Any]:
         "selected_partition_csv": resolved_paths.relative_to_workspace(
             ranking_root(resolved_paths) / "selected_partition_by_variant.csv"
         ),
-        "figures": [resolved_paths.relative_to_workspace(figures_root(resolved_paths) / "phase3b_ranking_summary.png")],
+        "figures": [resolved_paths.relative_to_workspace(figures_root(resolved_paths) / "boundary_ranking_summary.png")],
         "blockers": [],
     }
     write_json(ranking_root(resolved_paths) / "summary.json", summary)
@@ -2158,7 +2158,7 @@ def _build_phase3b_final_report(
     micro_stress = float(pooled_stress.loc["micro_skill", "utility"])
     changed_split_count = int(selection_frame["selected_changed_from_v4"].sum())
     lines = [
-        "# Phase-3b Score Revision Report",
+        "# Boundary Evaluation Report",
         "",
         "## 1. Reuse And Freeze",
         "",
@@ -2332,12 +2332,12 @@ def run_phase3b_revised_partition_eval(paths=None) -> dict[str, Any]:
     summary_frame, best_by_family = _phase3b_condition_summary(combined_frame)
     _save_dataframe(summary_frame, aggregate_root(resolved_paths) / "revised_partition_condition_summary.csv")
     _save_dataframe(best_by_family, aggregate_root(resolved_paths) / "revised_partition_best_by_family.csv")
-    _plot_phase3b_downstream(summary_frame, figures_root(resolved_paths) / "phase3b_downstream_comparison.png")
+    _plot_phase3b_downstream(summary_frame, figures_root(resolved_paths) / "boundary_downstream_comparison.png")
 
     boundary_distance_summary = _phase3b_boundary_distance_summary(candidate_frame, selection_frame)
     ranking_frame = pd.read_csv(ranking_root(resolved_paths) / "summary_by_variant.csv")
     write_text(
-        _report_path(resolved_paths, PHASE3B_FINAL_REPORT),
+        _report_path(resolved_paths, BOUNDARY_EVALUATION_REPORT),
         _build_phase3b_final_report(
             resolved_paths,
             ranking_frame,
@@ -2363,8 +2363,8 @@ def run_phase3b_revised_partition_eval(paths=None) -> dict[str, Any]:
         "best_by_family_csv": resolved_paths.relative_to_workspace(
             aggregate_root(resolved_paths) / "revised_partition_best_by_family.csv"
         ),
-        "figure": resolved_paths.relative_to_workspace(figures_root(resolved_paths) / "phase3b_downstream_comparison.png"),
-        "report_path": resolved_paths.relative_to_workspace(_report_path(resolved_paths, PHASE3B_FINAL_REPORT)),
+        "figure": resolved_paths.relative_to_workspace(figures_root(resolved_paths) / "boundary_downstream_comparison.png"),
+        "report_path": resolved_paths.relative_to_workspace(_report_path(resolved_paths, BOUNDARY_EVALUATION_REPORT)),
         "blockers": [],
     }
     write_json(revised_partition_eval_root(resolved_paths) / "summary.json", summary)

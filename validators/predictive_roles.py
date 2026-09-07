@@ -15,6 +15,7 @@ if str(ROOT_DIR) not in sys.path:
 
 from pipelines.predictive_common import compute_binary_metrics, compute_regression_metrics, normalize_metric_name
 from utils.io_utils import read_json
+from utils.pathing import detect_project_paths
 
 VALIDATOR_ROLES = [
     "profile_json",
@@ -51,11 +52,10 @@ def _fail(role: str, error_code: str, message: str, details: dict[str, Any] | No
 
 
 def infer_workspace_root(path: Path) -> Path | None:
-    resolved = path.resolve()
-    for candidate in [resolved.parent, *resolved.parents]:
-        if (candidate / "configs").exists() and (candidate / "apikey.txt").exists():
-            return candidate
-    return None
+    try:
+        return detect_project_paths(path).workspace_root
+    except RuntimeError:
+        return None
 
 
 def artifact_paths_for_run(run_dir: Path) -> dict[str, Path]:

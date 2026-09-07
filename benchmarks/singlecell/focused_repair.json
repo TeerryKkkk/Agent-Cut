@@ -24,9 +24,5 @@
       "mean_delta_rerun_span": 0.0,
       "mean_delta_extra_wall_clock": 0.0
     }
-  ],
-  "gap_assessment": {
-    "language_call": "focused_gap_closed_exactly_on_anchor_sensitive_slice"
-  },
-  "restoration_basis": "Draft-aligned focused-slice summary."
+  ]
 }

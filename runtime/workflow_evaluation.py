@@ -21,7 +21,7 @@ ROOT_DIR = Path(__file__).resolve().parents[1]
 if str(ROOT_DIR) not in sys.path:
     sys.path.insert(0, str(ROOT_DIR))
 
-from cut.score_segments import EXTERNAL_COUPLING_SCORE, SEMANTIC_CLOSURE_PRIOR, VALIDATOR_STRENGTH_PRIOR
+from cut.score_segments import PRIOR_TABLES
 from cut.select_partition import BOUNDARY_UTILITY
 from pipelines.predictive_common import (
     PREDICTIVE_ROLE_TEMPLATE,
@@ -395,6 +395,7 @@ def _qa_evidence(qa_summary: dict[str, Any], family_id: str, role: str) -> float
 
 
 def score_partitions_for_split(paths, family_id: str, support_tasks: list[str]) -> list[dict[str, Any]]:
+    prior_tables = PRIOR_TABLES["predictive"]
     qa_summary = _load_validator_qa_summary(paths)
     legal_segments = read_json(paths.results_dir / "partitions" / family_id / "legal_segments.json")
     legal_partitions = read_json(paths.results_dir / "partitions" / family_id / "legal_partitions.json")
@@ -417,9 +418,9 @@ def score_partitions_for_split(paths, family_id: str, support_tasks: list[str]) 
         recurrence = trace_coverage / len(support_transition_sets) if support_transition_sets else 0.0
         span = segment["transition_count"]
         qa_factor = _qa_evidence(qa_summary, family_id, segment["end_role"])
-        validator_strength = VALIDATOR_STRENGTH_PRIOR[segment["end_role"]] * qa_factor
-        semantic_closure = min(1.0, SEMANTIC_CLOSURE_PRIOR[segment["end_role"]] + 0.04 * min(2, span - 1))
-        external_coupling = max(0.0, EXTERNAL_COUPLING_SCORE[segment["start_role"]] - 0.03 * max(0, span - 2))
+        validator_strength = prior_tables["validator_strength"][segment["end_role"]] * qa_factor
+        semantic_closure = min(1.0, prior_tables["semantic_closure"][segment["end_role"]] + 0.04 * min(2, span - 1))
+        external_coupling = max(0.0, prior_tables["external_coupling"][segment["start_role"]] - 0.03 * max(0, span - 2))
         repair_span = 1.0 - ((span - 1) / max(1, max_span - 1))
         total_score = (
             0.2 * recurrence
@@ -451,7 +452,7 @@ def score_partitions_for_split(paths, family_id: str, support_tasks: list[str]) 
         mean_segment_score = sum(segment_scores) / len(segment_scores)
         internal_boundaries = [segment["end_role"] for segment in segments[:-1]]
         boundary_bonus = (
-            sum(BOUNDARY_UTILITY[role] for role in internal_boundaries) / max(1, len(internal_boundaries))
+            sum(BOUNDARY_UTILITY["predictive"][role] for role in internal_boundaries) / max(1, len(internal_boundaries))
             if internal_boundaries
             else 0.0
         )

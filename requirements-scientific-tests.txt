@@ -1,0 +1,4 @@
+# Offline validator tests; no Scanpy, scvi-tools, Torch, or dataset downloads.
+-r requirements-dev.txt
+-r requirements-predictive.txt
+anndata>=0.10,<1

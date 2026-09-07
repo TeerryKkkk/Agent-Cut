@@ -110,3 +110,36 @@ the complete predictive and single-cell experiments.
 python -m pip install -r requirements-dev.txt
 python -m pytest
 ```
+
+The default suite in `tests/unit/` checks legal partitions, repository discovery,
+and all 104 distributed skill boundaries. It needs only PyYAML and pytest.
+
+Offline scientific tests use synthetic artifacts to check label ordering, corrupt
+metrics, missing report content, and validator path discovery:
+
+```bash
+python -m pip install -r requirements-scientific-tests.txt
+python -m pytest tests/scientific
+```
+
+These tests require scientific Python libraries, including AnnData, but no dataset
+downloads or model training. To run both offline suites, use
+`python -m pytest tests/unit tests/scientific`.
+
+Reference integration tests execute OpenML Adult and TDC HIA_Hou/Caco2_Wang workflows,
+validate their outputs, and check detection of corrupted metrics:
+
+Use a separate **Python 3.11 environment on Linux** for the molecular requirements
+and these integration tests. PyTDC's current Census dependency
+[requires Python below 3.12](https://pypi.org/project/cellxgene-census/1.15.0/).
+
+```bash
+python -m pip install -r requirements-dev.txt -r requirements-molecular.txt
+python -m pytest tests/integration
+```
+
+Integration tests download data unless cached, train reference models, and write
+to ignored `data/`, `runs/`, and `results/` directories. CI runs both offline suites;
+the reference integration job is opt-in through the manual workflow's
+`run_integration` input. To collect tests without executing workflows, add
+`--collect-only` to the corresponding pytest command after installing its requirements.

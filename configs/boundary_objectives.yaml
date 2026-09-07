@@ -18,9 +18,9 @@ v7_constraint:
 
 variants:
   V4:
-    label: phase3_baseline_objective
+    label: hybrid_baseline_objective
     formula: score__V4
-    description: Reuse the frozen phase-3 V4 objective as the immediate baseline.
+    description: Use the V4 hybrid objective from scoring_variants.yaml as the baseline.
   V6:
     label: boundary_attribution_objective
     formula: normalized_V4 + shared residual correction over segment_count, B1..B5, and adjacent interactions
@@ -28,7 +28,7 @@ variants:
   V7:
     label: constrained_stress_first_objective
     formula: V6 score restricted to partitions within the explicit clean-cost bound relative to the V4-selected partition
-    description: Preserve stress-first selection while preventing another clean wall-clock regression.
+    description: Preserve stress-first selection within an explicit clean wall-clock cost bound.
   V8:
     label: family_conditioned_boundary_objective
     formula: normalized_V4 + family-conditioned residual correction over the same shared interpretable term set

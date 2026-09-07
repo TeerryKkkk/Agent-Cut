@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import shutil
 import tempfile
 import unittest
 from pathlib import Path
@@ -11,7 +10,6 @@ import pandas as pd
 
 from utils.io_utils import write_json, write_text
 from validators.singlecell_mapping_roles import (
-    artifact_paths_for_run,
     validate_mapping_metrics,
     validate_predicted_labels,
     validate_report_md,

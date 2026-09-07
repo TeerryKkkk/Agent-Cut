@@ -1,4 +1,4 @@
 [tool.pytest.ini_options]
 pythonpath = ["."]
-testpaths = ["tests"]
+testpaths = ["tests/unit"]
 addopts = "-q"

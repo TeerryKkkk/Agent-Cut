@@ -1,5 +1,3 @@
-from pathlib import Path
-
 import pytest
 
 from cut.enumerate_partitions import enumerate_legal_partitions, enumerate_legal_segments
